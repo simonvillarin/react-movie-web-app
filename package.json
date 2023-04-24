@@ -1,0 +1,36 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build.js --watch --dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.0",
+    "@mui/styled-engine-sc": "^5.12.0",
+    "autoprefixer": "^10.4.14",
+    "axios": "^1.3.5",
+    "esbuild": "^0.17.16",
+    "esbuild-envfile-plugin": "^1.0.5",
+    "esbuild-sass-plugin": "^2.8.0",
+    "formik": "^2.2.9",
+    "postcss": "^8.4.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.10.0",
+    "react-slick": "^0.29.0",
+    "sass": "^1.62.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.9",
+    "swiper": "^9.2.0",
+    "yup": "^1.1.1"
+  }
+}
