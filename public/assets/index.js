@@ -35649,6 +35649,10 @@ Please use another name.` : formatMuiErrorMessage(18));
       if (user) {
         localStorage.removeItem("user");
       }
+      let loc = localStorage.getItem("location");
+      if (loc) {
+        localStorage.removeItem("location");
+      }
       navigate("/");
     };
     return /* @__PURE__ */ import_react15.default.createElement(Box_default, { className: `dropdown-container ${!showDropdown && "dropdown-close"}` }, /* @__PURE__ */ import_react15.default.createElement(Box_default, { className: "dropdown-link", onClick: handleProfile }, "Profile"), /* @__PURE__ */ import_react15.default.createElement(Box_default, { className: "dropdown-link", onClick: handleLogout }, "Logout"));
@@ -40878,7 +40882,7 @@ attempted value: ${formattedValue}
         localStorage.removeItem("user");
       }
       setIsUserLoggedIn(false);
-      navigate("/");
+      navigate("/login");
       window.location.reload();
     };
     const handleSubmit = async (values2, { resetForm }) => {

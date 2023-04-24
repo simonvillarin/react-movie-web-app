@@ -20,6 +20,10 @@ const Dropdown = () => {
     if (user) {
       localStorage.removeItem("user");
     }
+    let loc = localStorage.getItem("location");
+    if (loc) {
+      localStorage.removeItem("location");
+    }
     navigate("/");
   };
 

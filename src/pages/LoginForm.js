@@ -24,7 +24,7 @@ const LoginForm = () => {
       localStorage.removeItem("user");
     }
     setIsUserLoggedIn(false);
-    navigate("/");
+    navigate("/login");
     window.location.reload();
   };
 
