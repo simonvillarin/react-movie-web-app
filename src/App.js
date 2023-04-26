@@ -29,6 +29,7 @@ const App = () => {
       setUserData(JSON.parse(user));
     } else {
       setIsUserLoggedIn(false);
+      navigate("/login");
     }
   }, [user]);
 

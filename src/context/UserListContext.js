@@ -11,13 +11,19 @@ export const UserListProvider = ({ children }) => {
     useContext(UserContext);
   const navigate = useNavigate();
 
+  let location = localStorage.getItem("location");
+
   const handleAxiosError = () => {
     let user = localStorage.getItem("user");
     if (user) {
       localStorage.removeItem("user");
     }
+    localStorage.getItem("location");
+    if (location) {
+      localStorage.removeItem("location");
+    }
     setIsUserLoggedIn(false);
-    window.location.reload();
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -26,7 +32,7 @@ export const UserListProvider = ({ children }) => {
         setUserList(res.data.reverse());
       })
       .catch((err) => handleAxiosError());
-  }, [isUserLoggedIn]);
+  }, [location]);
 
   return (
     <UserListContext.Provider value={{ userList, setUserList }}>

@@ -18,43 +18,37 @@ const LoginForm = () => {
     password: "",
   };
 
-  const handleAxiosError = () => {
-    let user = localStorage.getItem("user");
-    if (user) {
-      localStorage.removeItem("user");
-    }
-    setIsUserLoggedIn(false);
-    navigate("/login");
-    window.location.reload();
-  };
-
   const handleSubmit = async (values, { resetForm }) => {
     login(values)
       .then((response) => {
-        if (response.status != 403) {
-          getUserId()
-            .then((resp) => {
-              getUserById(resp.data, response.data.token)
-                .then((res) => {
-                  setIsUserLoggedIn(true);
-                  navigate("/home");
+        getUserId()
+          .then((resp) => {
+            getUserById(resp.data, response.data.token)
+              .then((res) => {
+                setIsUserLoggedIn(true);
+                navigate("/home");
 
-                  let data = {
-                    id: res.data.id,
-                    token: response.data.token,
-                    firstName: res.data.firstName,
-                    lastName: res.data.lastName,
-                  };
+                let data = {
+                  id: res.data.id,
+                  token: response.data.token,
+                  firstName: res.data.firstName,
+                  lastName: res.data.lastName,
+                };
 
-                  setUserData(data);
-                  localStorage.setItem("user", JSON.stringify(data));
-                })
-                .catch((err) => handleAxiosError());
-            })
-            .catch((err) => handleAxiosError());
-        }
+                setUserData(data);
+                localStorage.setItem("user", JSON.stringify(data));
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
-      .catch((err) => handleAxiosError());
+      .catch((err) => {
+        console.log(err);
+      });
     resetForm({ values: "" });
   };
 

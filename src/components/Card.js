@@ -1,10 +1,11 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Typography } from "@mui/material";
 import { addUserList, removeUserList } from "../services/UserListService";
 import { UserContext } from "../context/UserContext";
 import { MdAdd, MdDeleteOutline } from "react-icons/md";
 import { UserListContext } from "../context/UserListContext";
 import { AppbarContext } from "../context/AppbarContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Card = ({ poster, title, id }) => {
   const { userData, setIsUserLoggedIn } = useContext(UserContext);
@@ -17,8 +18,11 @@ const Card = ({ poster, title, id }) => {
     if (user) {
       localStorage.removeItem("user");
     }
+    if (location) {
+      localStorage.removeItem("location");
+    }
     setIsUserLoggedIn(false);
-    window.location.reload();
+    useNavigate("/login");
   };
 
   const handleAddToList = (id, poster, title) => {
@@ -40,7 +44,10 @@ const Card = ({ poster, title, id }) => {
           handleAxiosError();
         }
       })
-      .catch((err) => handleAxiosError());
+      .catch((err) => {
+        handleAxiosError();
+        console.log(err);
+      });
   };
 
   const handleRemoveFromList = (id) => {
@@ -53,7 +60,10 @@ const Card = ({ poster, title, id }) => {
           handleAxiosError();
         }
       })
-      .catch((err) => handleAxiosError());
+      .catch((err) => {
+        handleAxiosError();
+        console.log(err);
+      });
   };
 
   return (

@@ -15,7 +15,7 @@ const SignUpForm = () => {
     register(values)
       .then((res) => console.log("User registered successfully!"))
       .catch((err) => console.log(err));
-    navigate("/");
+    navigate("/login");
     resetForm({ values: "" });
   };
 
