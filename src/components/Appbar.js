@@ -72,7 +72,13 @@ const Appbar = () => {
                 src={Logo}
                 alt="Logo"
                 className="logo"
-                onClick={() => navigate("/home")}
+                onClick={() => {
+                  setLocation("/home");
+                  setSearch("");
+                  setShowDropdown(false);
+                  navigate("/home");
+                  window.scroll(0, 0);
+                }}
               />
               <Box className="nav-links">
                 {navLinks.map((link, index) => (
