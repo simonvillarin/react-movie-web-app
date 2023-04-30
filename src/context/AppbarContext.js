@@ -7,7 +7,6 @@ export const AppbarContextProvider = ({ children }) => {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [search, setSearch] = useState("");
-  const [location, setLocation] = useState("");
 
   return (
     <AppbarContext.Provider
@@ -20,8 +19,6 @@ export const AppbarContextProvider = ({ children }) => {
         setShowDropdown,
         search,
         setSearch,
-        location,
-        setLocation,
       }}
     >
       {children}

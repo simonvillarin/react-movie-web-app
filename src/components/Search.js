@@ -1,15 +1,13 @@
 import React, { useContext, useEffect } from "react";
 import { SlMagnifier } from "react-icons/sl";
 import { useNavigate } from "react-router-dom";
-import { APIContext } from "../context/APIContext";
 import { AppbarContext } from "../context/AppbarContext";
-import { UserContext } from "../context/UserContext";
-import { getSearchResults } from "../services/APIService";
+import { SearchContext } from "../context/SearchContext";
+import { getSearchResults } from "../services/ExternalAPIService";
 
 const Search = () => {
   const { search, setSearch } = useContext(AppbarContext);
-  const { setSearchResults } = useContext(APIContext);
-  const { setIsUserLoggedIn } = useContext(UserContext);
+  const { setSearchResults } = useContext(SearchContext);
   const navigate = useNavigate();
 
   const handleSearch = (e) => {
@@ -23,19 +21,9 @@ const Search = () => {
   };
 
   useEffect(() => {
-    let user = localStorage.getItem("user");
-    if (!user) {
-      setIsUserLoggedIn(false);
-      navigate("/login");
-    }
-
-    if (!search) {
-      let loc = localStorage.getItem("location");
-      if (loc) {
-        navigate(loc);
-      } else {
-        navigate("/home");
-      }
+    let location = window.location.href;
+    if (location == "http://localhost:8000/#/search" && !search) {
+      window.history.back();
     }
   }, [search]);
 

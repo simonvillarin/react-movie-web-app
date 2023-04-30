@@ -6,12 +6,13 @@ import { FiEye, FiEyeOff } from "react-icons/Fi";
 import * as yup from "yup";
 import { Form, Field, Formik, ErrorMessage } from "formik";
 import { login, getUserId, getUserById } from "../services/UserService";
+import { createSession } from "../services/UserService";
 import { UserContext } from "../context/UserContext";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const { setIsUserLoggedIn, setUserData } = useContext(UserContext);
+  const { setIsUserLoggedIn } = useContext(UserContext);
 
   const initVal = {
     username: "",
@@ -20,23 +21,22 @@ const LoginForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     login(values)
-      .then((response) => {
+      .then((res1) => {
         getUserId()
-          .then((resp) => {
-            getUserById(resp.data, response.data.token)
-              .then((res) => {
-                setIsUserLoggedIn(true);
-                navigate("/home");
-
-                let data = {
-                  id: res.data.id,
-                  token: response.data.token,
-                  firstName: res.data.firstName,
-                  lastName: res.data.lastName,
+          .then((res2) => {
+            getUserById(res2.data, res1.data.token)
+              .then((res3) => {
+                let user = {
+                  id: res3.data.id,
+                  firstName: res3.data.firstName,
+                  lastName: res3.data.lastName,
+                  username: res3.data.username,
+                  password: res3.data.password,
                 };
 
-                setUserData(data);
-                localStorage.setItem("user", JSON.stringify(data));
+                createSession(res1.data.token, user);
+                setIsUserLoggedIn(true);
+                navigate("/home");
               })
               .catch((err) => {
                 console.log(err);

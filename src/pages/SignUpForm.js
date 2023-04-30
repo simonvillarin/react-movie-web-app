@@ -22,7 +22,6 @@ const SignUpForm = () => {
   let initVal = {
     firstName: "",
     lastName: "",
-    email: "",
     username: "",
     password: "",
     confirmPassword: "",
@@ -39,7 +38,6 @@ const SignUpForm = () => {
       .min(2, "Must have atleast 2 characters!")
       .max(60, "Last name is too long!")
       .required("Last name is required!"),
-    email: yup.string().email("Invalid email!").required("Email is required!"),
     username: yup
       .string()
       .min(6, "Username is too short")
@@ -116,17 +114,6 @@ const SignUpForm = () => {
                   </ErrorMessage>
                 </Box>
                 <Box className="form-group">
-                  <Typography variant="body2">Email</Typography>
-                  <Field className="login-input" name="email" type="text" />
-                  <ErrorMessage name="email">
-                    {(msg) => (
-                      <Typography variant="body2" sx={{ color: "red" }}>
-                        {msg}
-                      </Typography>
-                    )}
-                  </ErrorMessage>
-                </Box>
-                <Box className="form-group">
                   <Typography variant="body2">Username</Typography>
                   <Field className="login-input" name="username" type="text" />
                   <ErrorMessage name="username">
@@ -152,14 +139,14 @@ const SignUpForm = () => {
                         <FiEyeOff onClick={() => setShowPassword(true)} />
                       )}
                     </Box>
-                    <ErrorMessage name="password">
-                      {(msg) => (
-                        <Typography variant="body2" sx={{ color: "red" }}>
-                          {msg}
-                        </Typography>
-                      )}
-                    </ErrorMessage>
                   </Box>
+                  <ErrorMessage name="password">
+                    {(msg) => (
+                      <Typography variant="body2" sx={{ color: "red" }}>
+                        {msg}
+                      </Typography>
+                    )}
+                  </ErrorMessage>
                 </Box>
                 <Box className="form-group">
                   <Typography variant="body2">Confirm Password</Typography>
@@ -178,14 +165,14 @@ const SignUpForm = () => {
                         />
                       )}
                     </Box>
-                    <ErrorMessage name="confirmPassword">
-                      {(msg) => (
-                        <Typography variant="body2" sx={{ color: "red" }}>
-                          {msg}
-                        </Typography>
-                      )}
-                    </ErrorMessage>
                   </Box>
+                  <ErrorMessage name="confirmPassword">
+                    {(msg) => (
+                      <Typography variant="body2" sx={{ color: "red" }}>
+                        {msg}
+                      </Typography>
+                    )}
+                  </ErrorMessage>
                 </Box>
 
                 <button type="submit" className="register-btn">

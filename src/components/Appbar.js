@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import { AppBar, Container, Toolbar, Typography, Box } from "@mui/material";
 import { SlUser, SlMagnifier, SlMenu, SlClose } from "react-icons/sl";
-import Search from "./Search";
 import { useNavigate } from "react-router-dom";
+import { AppbarContext } from "../context/AppbarContext";
+import Search from "./Search";
 import MobileNav from "./MobileNav";
 import MobileSearch from "./MobileSearch";
-import { AppbarContext } from "../context/AppbarContext";
 import Dropdown from "./Dropdown";
-import { UserContext } from "../context/UserContext";
 import Logo from "../../public/assets/images/logo.png";
 
 const navLinks = [
@@ -37,10 +36,8 @@ const Appbar = () => {
     setShowMobileSearch,
     showDropdown,
     setShowDropdown,
-    setLocation,
     setSearch,
   } = useContext(AppbarContext);
-  const { userData } = useContext(UserContext);
   const navigate = useNavigate();
 
   return (
@@ -73,7 +70,6 @@ const Appbar = () => {
                 alt="Logo"
                 className="logo"
                 onClick={() => {
-                  setLocation("/home");
                   setSearch("");
                   setShowDropdown(false);
                   navigate("/home");
@@ -86,13 +82,10 @@ const Appbar = () => {
                     key={index}
                     sx={{ cursor: "pointer" }}
                     onClick={() => {
-                      setLocation(link.to);
                       setSearch("");
                       setShowDropdown(false);
                       navigate(link.to);
                       window.scroll(0, 0);
-
-                      localStorage.setItem("location", link.to);
                     }}
                   >
                     {link.name}
@@ -112,9 +105,6 @@ const Appbar = () => {
                 }}
               >
                 <SlUser style={{ cursor: "pointer" }} />
-                <Typography variant="body2" sx={{ cursor: "pointer" }}>
-                  {userData.firstName}
-                </Typography>
                 <Dropdown />
               </Box>
             </Box>

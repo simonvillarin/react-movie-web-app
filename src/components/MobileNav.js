@@ -23,7 +23,7 @@ const navLinks = [
 ];
 
 const MobileNav = () => {
-  const { showMobileNav, setShowMobileNav, setShowMobileSearch, setLocation } =
+  const { showMobileNav, setShowMobileNav, setShowMobileSearch } =
     useContext(AppbarContext);
   const navigate = useNavigate();
   return (
@@ -40,7 +40,6 @@ const MobileNav = () => {
             onClick={() => {
               setShowMobileNav(false);
               setShowMobileSearch(false);
-              setLocation(link.to);
               navigate(link.to);
               window.scroll(0, 0);
             }}

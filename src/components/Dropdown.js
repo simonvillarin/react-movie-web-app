@@ -29,7 +29,13 @@ const Dropdown = () => {
 
   return (
     <Box className={`dropdown-container ${!showDropdown && "dropdown-close"}`}>
-      <Box className="dropdown-link" onClick={handleProfile}>
+      <Box
+        className="dropdown-link"
+        onClick={() => {
+          handleProfile();
+          navigate("/profile");
+        }}
+      >
         Profile
       </Box>
       <Box className="dropdown-link" onClick={handleLogout}>

@@ -784,7 +784,7 @@
             }
             return children;
           }
-          function createContext9(defaultValue) {
+          function createContext8(defaultValue) {
             var context = {
               $$typeof: REACT_CONTEXT_TYPE,
               // As a workaround to support multiple concurrent renderers, we categorize
@@ -971,7 +971,7 @@
             }
             return lazyType;
           }
-          function forwardRef10(render) {
+          function forwardRef12(render) {
             {
               if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
                 error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
@@ -1070,7 +1070,7 @@
             }
             return dispatcher;
           }
-          function useContext24(Context) {
+          function useContext22(Context) {
             var dispatcher = resolveDispatcher();
             {
               if (Context._context !== void 0) {
@@ -1084,7 +1084,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState10(initialState) {
+          function useState17(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1096,7 +1096,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect9(create, deps) {
+          function useEffect15(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1864,21 +1864,21 @@
           exports2.Suspense = REACT_SUSPENSE_TYPE;
           exports2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
           exports2.cloneElement = cloneElement$1;
-          exports2.createContext = createContext9;
+          exports2.createContext = createContext8;
           exports2.createElement = createElement$1;
           exports2.createFactory = createFactory;
           exports2.createRef = createRef;
-          exports2.forwardRef = forwardRef10;
+          exports2.forwardRef = forwardRef12;
           exports2.isValidElement = isValidElement2;
           exports2.lazy = lazy;
           exports2.memo = memo;
           exports2.startTransition = startTransition;
           exports2.unstable_act = act;
           exports2.useCallback = useCallback4;
-          exports2.useContext = useContext24;
+          exports2.useContext = useContext22;
           exports2.useDebugValue = useDebugValue4;
           exports2.useDeferredValue = useDeferredValue;
-          exports2.useEffect = useEffect9;
+          exports2.useEffect = useEffect15;
           exports2.useId = useId;
           exports2.useImperativeHandle = useImperativeHandle2;
           exports2.useInsertionEffect = useInsertionEffect3;
@@ -1886,7 +1886,7 @@
           exports2.useMemo = useMemo6;
           exports2.useReducer = useReducer2;
           exports2.useRef = useRef5;
-          exports2.useState = useState10;
+          exports2.useState = useState17;
           exports2.useSyncExternalStore = useSyncExternalStore2;
           exports2.useTransition = useTransition;
           exports2.version = ReactVersion;
@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React40 = require_react();
+          var React46 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React40.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React46.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React40.Children.forEach(props.children, function(child) {
+                  React46.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -4421,7 +4421,7 @@
             var warnedForNaNValue = false;
             var warnedForInfinityValue = false;
             var camelize = function(string2) {
-              return string2.replace(hyphenPattern, function(_, character2) {
+              return string2.replace(hyphenPattern, function(_2, character2) {
                 return character2.toUpperCase();
               });
             };
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React40.Component().refs;
+          var emptyRefsObject = new React46.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -24740,7 +24740,7 @@
       if (true) {
         (function() {
           "use strict";
-          var React40 = require_react();
+          var React46 = require_react();
           var REACT_ELEMENT_TYPE2 = Symbol.for("react.element");
           var REACT_PORTAL_TYPE = Symbol.for("react.portal");
           var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
@@ -24766,7 +24766,7 @@
             }
             return null;
           }
-          var ReactSharedInternals = React40.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React46.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function error(format) {
             {
               {
@@ -25914,7 +25914,7 @@
   });
 
   // src/index.js
-  var import_react32 = __toESM(require_react(), 1);
+  var import_react37 = __toESM(require_react(), 1);
   var import_client = __toESM(require_client(), 1);
 
   // node_modules/react-router-dom/dist/index.js
@@ -26383,7 +26383,7 @@
     }
     warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
     let paramNames = [];
-    let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^$?{}|()[\]]/g, "\\$&").replace(/\/:(\w+)/g, (_, paramName) => {
+    let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^$?{}|()[\]]/g, "\\$&").replace(/\/:(\w+)/g, (_2, paramName) => {
       paramNames.push(paramName);
       return "/([^\\/]+)";
     });
@@ -26710,7 +26710,7 @@
     React.useEffect(() => {
       activeRef.current = true;
     });
-    let navigate = React.useCallback(function(to, options) {
+    let navigate2 = React.useCallback(function(to, options) {
       if (options === void 0) {
         options = {};
       }
@@ -26727,7 +26727,14 @@
       }
       (!!options.replace ? navigator2.replace : navigator2.push)(path, options.state, options);
     }, [basename, navigator2, routePathnamesJson, locationPathname]);
-    return navigate;
+    return navigate2;
+  }
+  function useParams() {
+    let {
+      matches
+    } = React.useContext(RouteContext);
+    let routeMatch = matches[matches.length - 1];
+    return routeMatch ? routeMatch.params : {};
   }
   function useResolvedPath(to, _temp2) {
     let {
@@ -27518,7 +27525,7 @@
       preventScrollReset,
       relative
     } = _temp === void 0 ? {} : _temp;
-    let navigate = useNavigate();
+    let navigate2 = useNavigate();
     let location = useLocation();
     let path = useResolvedPath(to, {
       relative
@@ -27527,14 +27534,14 @@
       if (shouldProcessLinkClick(event, target)) {
         event.preventDefault();
         let replace4 = replaceProp !== void 0 ? replaceProp : createPath(location) === createPath(path);
-        navigate(to, {
+        navigate2(to, {
           replace: replace4,
           state,
           preventScrollReset,
           relative
         });
       }
-    }, [location, navigate, path, replaceProp, state, target, to, preventScrollReset, relative]);
+    }, [location, navigate2, path, replaceProp, state, target, to, preventScrollReset, relative]);
   }
   function useSubmitImpl(fetcherKey, routeId) {
     let {
@@ -27684,7 +27691,7 @@
   }
 
   // src/App.js
-  var import_react31 = __toESM(require_react(), 1);
+  var import_react36 = __toESM(require_react(), 1);
 
   // node_modules/@mui/material/colors/common.js
   var common = {
@@ -29623,6 +29630,24 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   if (true) {
     Global.displayName = "EmotionGlobal";
   }
+  function css() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    return serializeStyles(args);
+  }
+  var keyframes = function keyframes2() {
+    var insertable = css.apply(void 0, arguments);
+    var name = "animation-" + insertable.name;
+    return {
+      name,
+      styles: "@keyframes " + name + "{" + insertable.styles + "}",
+      anim: 1,
+      toString: function toString5() {
+        return "_EMO_" + this.name + "_" + this.styles + "_EMO_";
+      }
+    };
+  };
   var classnames = function classnames2(args) {
     var len = args.length;
     var i = 0;
@@ -32453,6 +32478,14 @@ Please use another name.` : formatMuiErrorMessage(18));
   }
   var createTheme_default2 = createTheme2;
 
+  // node_modules/@mui/material/styles/cssUtils.js
+  function getUnit(input) {
+    return String(input).match(/[\d.\-+]*\s*(.*)/)[1] || "";
+  }
+  function toUnitless(length2) {
+    return parseFloat(length2);
+  }
+
   // node_modules/@mui/material/styles/useTheme.js
   var React11 = __toESM(require_react());
 
@@ -33123,9 +33156,473 @@ Please use another name.` : formatMuiErrorMessage(18));
   } : void 0;
   var Container_default = Container;
 
-  // node_modules/@mui/material/Toolbar/Toolbar.js
+  // node_modules/@mui/material/Divider/Divider.js
   var React16 = __toESM(require_react());
   var import_prop_types11 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/Divider/dividerClasses.js
+  function getDividerUtilityClass(slot) {
+    return generateUtilityClass("MuiDivider", slot);
+  }
+  var dividerClasses = generateUtilityClasses("MuiDivider", ["root", "absolute", "fullWidth", "inset", "middle", "flexItem", "light", "vertical", "withChildren", "withChildrenVertical", "textAlignRight", "textAlignLeft", "wrapper", "wrapperVertical"]);
+
+  // node_modules/@mui/material/Divider/Divider.js
+  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
+  var _excluded19 = ["absolute", "children", "className", "component", "flexItem", "light", "orientation", "role", "textAlign", "variant"];
+  var useUtilityClasses5 = (ownerState) => {
+    const {
+      absolute,
+      children,
+      classes,
+      flexItem,
+      light: light2,
+      orientation,
+      textAlign,
+      variant
+    } = ownerState;
+    const slots = {
+      root: ["root", absolute && "absolute", variant, light2 && "light", orientation === "vertical" && "vertical", flexItem && "flexItem", children && "withChildren", children && orientation === "vertical" && "withChildrenVertical", textAlign === "right" && orientation !== "vertical" && "textAlignRight", textAlign === "left" && orientation !== "vertical" && "textAlignLeft"],
+      wrapper: ["wrapper", orientation === "vertical" && "wrapperVertical"]
+    };
+    return composeClasses(slots, getDividerUtilityClass, classes);
+  };
+  var DividerRoot = styled_default2("div", {
+    name: "MuiDivider",
+    slot: "Root",
+    overridesResolver: (props, styles) => {
+      const {
+        ownerState
+      } = props;
+      return [styles.root, ownerState.absolute && styles.absolute, styles[ownerState.variant], ownerState.light && styles.light, ownerState.orientation === "vertical" && styles.vertical, ownerState.flexItem && styles.flexItem, ownerState.children && styles.withChildren, ownerState.children && ownerState.orientation === "vertical" && styles.withChildrenVertical, ownerState.textAlign === "right" && ownerState.orientation !== "vertical" && styles.textAlignRight, ownerState.textAlign === "left" && ownerState.orientation !== "vertical" && styles.textAlignLeft];
+    }
+  })(({
+    theme: theme2,
+    ownerState
+  }) => _extends4({
+    margin: 0,
+    // Reset browser default style.
+    flexShrink: 0,
+    borderWidth: 0,
+    borderStyle: "solid",
+    borderColor: (theme2.vars || theme2).palette.divider,
+    borderBottomWidth: "thin"
+  }, ownerState.absolute && {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "100%"
+  }, ownerState.light && {
+    borderColor: theme2.vars ? `rgba(${theme2.vars.palette.dividerChannel} / 0.08)` : alpha(theme2.palette.divider, 0.08)
+  }, ownerState.variant === "inset" && {
+    marginLeft: 72
+  }, ownerState.variant === "middle" && ownerState.orientation === "horizontal" && {
+    marginLeft: theme2.spacing(2),
+    marginRight: theme2.spacing(2)
+  }, ownerState.variant === "middle" && ownerState.orientation === "vertical" && {
+    marginTop: theme2.spacing(1),
+    marginBottom: theme2.spacing(1)
+  }, ownerState.orientation === "vertical" && {
+    height: "100%",
+    borderBottomWidth: 0,
+    borderRightWidth: "thin"
+  }, ownerState.flexItem && {
+    alignSelf: "stretch",
+    height: "auto"
+  }), ({
+    theme: theme2,
+    ownerState
+  }) => _extends4({}, ownerState.children && {
+    display: "flex",
+    whiteSpace: "nowrap",
+    textAlign: "center",
+    border: 0,
+    "&::before, &::after": {
+      position: "relative",
+      width: "100%",
+      borderTop: `thin solid ${(theme2.vars || theme2).palette.divider}`,
+      top: "50%",
+      content: '""',
+      transform: "translateY(50%)"
+    }
+  }), ({
+    theme: theme2,
+    ownerState
+  }) => _extends4({}, ownerState.children && ownerState.orientation === "vertical" && {
+    flexDirection: "column",
+    "&::before, &::after": {
+      height: "100%",
+      top: "0%",
+      left: "50%",
+      borderTop: 0,
+      borderLeft: `thin solid ${(theme2.vars || theme2).palette.divider}`,
+      transform: "translateX(0%)"
+    }
+  }), ({
+    ownerState
+  }) => _extends4({}, ownerState.textAlign === "right" && ownerState.orientation !== "vertical" && {
+    "&::before": {
+      width: "90%"
+    },
+    "&::after": {
+      width: "10%"
+    }
+  }, ownerState.textAlign === "left" && ownerState.orientation !== "vertical" && {
+    "&::before": {
+      width: "10%"
+    },
+    "&::after": {
+      width: "90%"
+    }
+  }));
+  var DividerWrapper = styled_default2("span", {
+    name: "MuiDivider",
+    slot: "Wrapper",
+    overridesResolver: (props, styles) => {
+      const {
+        ownerState
+      } = props;
+      return [styles.wrapper, ownerState.orientation === "vertical" && styles.wrapperVertical];
+    }
+  })(({
+    theme: theme2,
+    ownerState
+  }) => _extends4({
+    display: "inline-block",
+    paddingLeft: `calc(${theme2.spacing(1)} * 1.2)`,
+    paddingRight: `calc(${theme2.spacing(1)} * 1.2)`
+  }, ownerState.orientation === "vertical" && {
+    paddingTop: `calc(${theme2.spacing(1)} * 1.2)`,
+    paddingBottom: `calc(${theme2.spacing(1)} * 1.2)`
+  }));
+  var Divider = /* @__PURE__ */ React16.forwardRef(function Divider2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiDivider"
+    });
+    const {
+      absolute = false,
+      children,
+      className,
+      component = children ? "div" : "hr",
+      flexItem = false,
+      light: light2 = false,
+      orientation = "horizontal",
+      role = component !== "hr" ? "separator" : void 0,
+      textAlign = "center",
+      variant = "fullWidth"
+    } = props, other = _objectWithoutPropertiesLoose2(props, _excluded19);
+    const ownerState = _extends4({}, props, {
+      absolute,
+      component,
+      flexItem,
+      light: light2,
+      orientation,
+      role,
+      textAlign,
+      variant
+    });
+    const classes = useUtilityClasses5(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(DividerRoot, _extends4({
+      as: component,
+      className: clsx_m_default(classes.root, className),
+      role,
+      ref,
+      ownerState
+    }, other, {
+      children: children ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(DividerWrapper, {
+        className: classes.wrapper,
+        ownerState,
+        children
+      }) : null
+    }));
+  });
+  true ? Divider.propTypes = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+     * Absolutely position the element.
+     * @default false
+     */
+    absolute: import_prop_types11.default.bool,
+    /**
+     * The content of the component.
+     */
+    children: import_prop_types11.default.node,
+    /**
+     * Override or extend the styles applied to the component.
+     */
+    classes: import_prop_types11.default.object,
+    /**
+     * @ignore
+     */
+    className: import_prop_types11.default.string,
+    /**
+     * The component used for the root node.
+     * Either a string to use a HTML element or a component.
+     */
+    component: import_prop_types11.default.elementType,
+    /**
+     * If `true`, a vertical divider will have the correct height when used in flex container.
+     * (By default, a vertical divider will have a calculated height of `0px` if it is the child of a flex container.)
+     * @default false
+     */
+    flexItem: import_prop_types11.default.bool,
+    /**
+     * If `true`, the divider will have a lighter color.
+     * @default false
+     */
+    light: import_prop_types11.default.bool,
+    /**
+     * The component orientation.
+     * @default 'horizontal'
+     */
+    orientation: import_prop_types11.default.oneOf(["horizontal", "vertical"]),
+    /**
+     * @ignore
+     */
+    role: import_prop_types11.default.string,
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
+    sx: import_prop_types11.default.oneOfType([import_prop_types11.default.arrayOf(import_prop_types11.default.oneOfType([import_prop_types11.default.func, import_prop_types11.default.object, import_prop_types11.default.bool])), import_prop_types11.default.func, import_prop_types11.default.object]),
+    /**
+     * The text alignment.
+     * @default 'center'
+     */
+    textAlign: import_prop_types11.default.oneOf(["center", "left", "right"]),
+    /**
+     * The variant to use.
+     * @default 'fullWidth'
+     */
+    variant: import_prop_types11.default.oneOfType([import_prop_types11.default.oneOf(["fullWidth", "inset", "middle"]), import_prop_types11.default.string])
+  } : void 0;
+  var Divider_default = Divider;
+
+  // node_modules/@mui/material/Skeleton/Skeleton.js
+  var React17 = __toESM(require_react());
+  var import_prop_types12 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/Skeleton/skeletonClasses.js
+  function getSkeletonUtilityClass(slot) {
+    return generateUtilityClass("MuiSkeleton", slot);
+  }
+  var skeletonClasses = generateUtilityClasses("MuiSkeleton", ["root", "text", "rectangular", "rounded", "circular", "pulse", "wave", "withChildren", "fitContent", "heightAuto"]);
+
+  // node_modules/@mui/material/Skeleton/Skeleton.js
+  var import_jsx_runtime10 = __toESM(require_jsx_runtime());
+  var _excluded20 = ["animation", "className", "component", "height", "style", "variant", "width"];
+  var _ = (t) => t;
+  var _t;
+  var _t2;
+  var _t3;
+  var _t4;
+  var useUtilityClasses6 = (ownerState) => {
+    const {
+      classes,
+      variant,
+      animation,
+      hasChildren,
+      width: width2,
+      height: height2
+    } = ownerState;
+    const slots = {
+      root: ["root", variant, animation, hasChildren && "withChildren", hasChildren && !width2 && "fitContent", hasChildren && !height2 && "heightAuto"]
+    };
+    return composeClasses(slots, getSkeletonUtilityClass, classes);
+  };
+  var pulseKeyframe = keyframes(_t || (_t = _`
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`));
+  var waveKeyframe = keyframes(_t2 || (_t2 = _`
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    /* +0.5s of delay between each loop */
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+`));
+  var SkeletonRoot = styled_default2("span", {
+    name: "MuiSkeleton",
+    slot: "Root",
+    overridesResolver: (props, styles) => {
+      const {
+        ownerState
+      } = props;
+      return [styles.root, styles[ownerState.variant], ownerState.animation !== false && styles[ownerState.animation], ownerState.hasChildren && styles.withChildren, ownerState.hasChildren && !ownerState.width && styles.fitContent, ownerState.hasChildren && !ownerState.height && styles.heightAuto];
+    }
+  })(({
+    theme: theme2,
+    ownerState
+  }) => {
+    const radiusUnit = getUnit(theme2.shape.borderRadius) || "px";
+    const radiusValue = toUnitless(theme2.shape.borderRadius);
+    return _extends4({
+      display: "block",
+      // Create a "on paper" color with sufficient contrast retaining the color
+      backgroundColor: theme2.vars ? theme2.vars.palette.Skeleton.bg : alpha(theme2.palette.text.primary, theme2.palette.mode === "light" ? 0.11 : 0.13),
+      height: "1.2em"
+    }, ownerState.variant === "text" && {
+      marginTop: 0,
+      marginBottom: 0,
+      height: "auto",
+      transformOrigin: "0 55%",
+      transform: "scale(1, 0.60)",
+      borderRadius: `${radiusValue}${radiusUnit}/${Math.round(radiusValue / 0.6 * 10) / 10}${radiusUnit}`,
+      "&:empty:before": {
+        content: '"\\00a0"'
+      }
+    }, ownerState.variant === "circular" && {
+      borderRadius: "50%"
+    }, ownerState.variant === "rounded" && {
+      borderRadius: (theme2.vars || theme2).shape.borderRadius
+    }, ownerState.hasChildren && {
+      "& > *": {
+        visibility: "hidden"
+      }
+    }, ownerState.hasChildren && !ownerState.width && {
+      maxWidth: "fit-content"
+    }, ownerState.hasChildren && !ownerState.height && {
+      height: "auto"
+    });
+  }, ({
+    ownerState
+  }) => ownerState.animation === "pulse" && css(_t3 || (_t3 = _`
+      animation: ${0} 1.5s ease-in-out 0.5s infinite;
+    `), pulseKeyframe), ({
+    ownerState,
+    theme: theme2
+  }) => ownerState.animation === "wave" && css(_t4 || (_t4 = _`
+      position: relative;
+      overflow: hidden;
+
+      /* Fix bug in Safari https://bugs.webkit.org/show_bug.cgi?id=68196 */
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+      &::after {
+        animation: ${0} 1.6s linear 0.5s infinite;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          ${0},
+          transparent
+        );
+        content: '';
+        position: absolute;
+        transform: translateX(-100%); /* Avoid flash during server-side hydration */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+    `), waveKeyframe, (theme2.vars || theme2).palette.action.hover));
+  var Skeleton = /* @__PURE__ */ React17.forwardRef(function Skeleton2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiSkeleton"
+    });
+    const {
+      animation = "pulse",
+      className,
+      component = "span",
+      height: height2,
+      style: style3,
+      variant = "text",
+      width: width2
+    } = props, other = _objectWithoutPropertiesLoose2(props, _excluded20);
+    const ownerState = _extends4({}, props, {
+      animation,
+      component,
+      variant,
+      hasChildren: Boolean(other.children)
+    });
+    const classes = useUtilityClasses6(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(SkeletonRoot, _extends4({
+      as: component,
+      ref,
+      className: clsx_m_default(classes.root, className),
+      ownerState
+    }, other, {
+      style: _extends4({
+        width: width2,
+        height: height2
+      }, style3)
+    }));
+  });
+  true ? Skeleton.propTypes = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+     * The animation.
+     * If `false` the animation effect is disabled.
+     * @default 'pulse'
+     */
+    animation: import_prop_types12.default.oneOf(["pulse", "wave", false]),
+    /**
+     * Optional children to infer width and height from.
+     */
+    children: import_prop_types12.default.node,
+    /**
+     * Override or extend the styles applied to the component.
+     */
+    classes: import_prop_types12.default.object,
+    /**
+     * @ignore
+     */
+    className: import_prop_types12.default.string,
+    /**
+     * The component used for the root node.
+     * Either a string to use a HTML element or a component.
+     */
+    component: import_prop_types12.default.elementType,
+    /**
+     * Height of the skeleton.
+     * Useful when you don't want to adapt the skeleton to a text element but for instance a card.
+     */
+    height: import_prop_types12.default.oneOfType([import_prop_types12.default.number, import_prop_types12.default.string]),
+    /**
+     * @ignore
+     */
+    style: import_prop_types12.default.object,
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
+    sx: import_prop_types12.default.oneOfType([import_prop_types12.default.arrayOf(import_prop_types12.default.oneOfType([import_prop_types12.default.func, import_prop_types12.default.object, import_prop_types12.default.bool])), import_prop_types12.default.func, import_prop_types12.default.object]),
+    /**
+     * The type of content that will be rendered.
+     * @default 'text'
+     */
+    variant: import_prop_types12.default.oneOfType([import_prop_types12.default.oneOf(["circular", "rectangular", "rounded", "text"]), import_prop_types12.default.string]),
+    /**
+     * Width of the skeleton.
+     * Useful when the skeleton is inside an inline element with no width of its own.
+     */
+    width: import_prop_types12.default.oneOfType([import_prop_types12.default.number, import_prop_types12.default.string])
+  } : void 0;
+  var Skeleton_default = Skeleton;
+
+  // node_modules/@mui/material/Toolbar/Toolbar.js
+  var React18 = __toESM(require_react());
+  var import_prop_types13 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Toolbar/toolbarClasses.js
   function getToolbarUtilityClass(slot) {
@@ -33134,9 +33631,9 @@ Please use another name.` : formatMuiErrorMessage(18));
   var toolbarClasses = generateUtilityClasses("MuiToolbar", ["root", "gutters", "regular", "dense"]);
 
   // node_modules/@mui/material/Toolbar/Toolbar.js
-  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
-  var _excluded19 = ["className", "component", "disableGutters", "variant"];
-  var useUtilityClasses5 = (ownerState) => {
+  var import_jsx_runtime11 = __toESM(require_jsx_runtime());
+  var _excluded21 = ["className", "component", "disableGutters", "variant"];
+  var useUtilityClasses7 = (ownerState) => {
     const {
       classes,
       disableGutters,
@@ -33176,7 +33673,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     theme: theme2,
     ownerState
   }) => ownerState.variant === "regular" && theme2.mixins.toolbar);
-  var Toolbar = /* @__PURE__ */ React16.forwardRef(function Toolbar2(inProps, ref) {
+  var Toolbar = /* @__PURE__ */ React18.forwardRef(function Toolbar2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiToolbar"
@@ -33186,14 +33683,14 @@ Please use another name.` : formatMuiErrorMessage(18));
       component = "div",
       disableGutters = false,
       variant = "regular"
-    } = props, other = _objectWithoutPropertiesLoose2(props, _excluded19);
+    } = props, other = _objectWithoutPropertiesLoose2(props, _excluded21);
     const ownerState = _extends4({}, props, {
       component,
       disableGutters,
       variant
     });
-    const classes = useUtilityClasses5(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(ToolbarRoot, _extends4({
+    const classes = useUtilityClasses7(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(ToolbarRoot, _extends4({
       as: component,
       className: clsx_m_default(classes.root, className),
       ref,
@@ -33209,34 +33706,34 @@ Please use another name.` : formatMuiErrorMessage(18));
      * The Toolbar children, usually a mixture of `IconButton`, `Button` and `Typography`.
      * The Toolbar is a flex container, allowing flex item properties to be used to lay out the children.
      */
-    children: import_prop_types11.default.node,
+    children: import_prop_types13.default.node,
     /**
      * Override or extend the styles applied to the component.
      */
-    classes: import_prop_types11.default.object,
+    classes: import_prop_types13.default.object,
     /**
      * @ignore
      */
-    className: import_prop_types11.default.string,
+    className: import_prop_types13.default.string,
     /**
      * The component used for the root node.
      * Either a string to use a HTML element or a component.
      */
-    component: import_prop_types11.default.elementType,
+    component: import_prop_types13.default.elementType,
     /**
      * If `true`, disables gutter padding.
      * @default false
      */
-    disableGutters: import_prop_types11.default.bool,
+    disableGutters: import_prop_types13.default.bool,
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    sx: import_prop_types11.default.oneOfType([import_prop_types11.default.arrayOf(import_prop_types11.default.oneOfType([import_prop_types11.default.func, import_prop_types11.default.object, import_prop_types11.default.bool])), import_prop_types11.default.func, import_prop_types11.default.object]),
+    sx: import_prop_types13.default.oneOfType([import_prop_types13.default.arrayOf(import_prop_types13.default.oneOfType([import_prop_types13.default.func, import_prop_types13.default.object, import_prop_types13.default.bool])), import_prop_types13.default.func, import_prop_types13.default.object]),
     /**
      * The variant to use.
      * @default 'regular'
      */
-    variant: import_prop_types11.default.oneOfType([import_prop_types11.default.oneOf(["dense", "regular"]), import_prop_types11.default.string])
+    variant: import_prop_types13.default.oneOfType([import_prop_types13.default.oneOf(["dense", "regular"]), import_prop_types13.default.string])
   } : void 0;
   var Toolbar_default = Toolbar;
 
@@ -33253,112 +33750,8 @@ Please use another name.` : formatMuiErrorMessage(18));
   });
   var theme_default = theme;
 
-  // src/components/Appbar.js
-  var import_react18 = __toESM(require_react(), 1);
-
-  // node_modules/react-icons/lib/esm/iconBase.js
-  var import_react9 = __toESM(require_react());
-
-  // node_modules/react-icons/lib/esm/iconContext.js
-  var import_react8 = __toESM(require_react());
-  var DefaultContext = {
-    color: void 0,
-    size: void 0,
-    className: void 0,
-    style: void 0,
-    attr: void 0
-  };
-  var IconContext = import_react8.default.createContext && import_react8.default.createContext(DefaultContext);
-
-  // node_modules/react-icons/lib/esm/iconBase.js
-  var __assign = function() {
-    __assign = Object.assign || function(t) {
-      for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s)
-          if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-      }
-      return t;
-    };
-    return __assign.apply(this, arguments);
-  };
-  var __rest = function(s, e) {
-    var t = {};
-    for (var p in s)
-      if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-          t[p[i]] = s[p[i]];
-      }
-    return t;
-  };
-  function Tree2Element(tree) {
-    return tree && tree.map(function(node2, i) {
-      return import_react9.default.createElement(node2.tag, __assign({
-        key: i
-      }, node2.attr), Tree2Element(node2.child));
-    });
-  }
-  function GenIcon(data) {
-    return function(props) {
-      return import_react9.default.createElement(IconBase, __assign({
-        attr: __assign({}, data.attr)
-      }, props), Tree2Element(data.child));
-    };
-  }
-  function IconBase(props) {
-    var elem = function(conf) {
-      var attr = props.attr, size = props.size, title = props.title, svgProps = __rest(props, ["attr", "size", "title"]);
-      var computedSize = size || conf.size || "1em";
-      var className;
-      if (conf.className)
-        className = conf.className;
-      if (props.className)
-        className = (className ? className + " " : "") + props.className;
-      return import_react9.default.createElement("svg", __assign({
-        stroke: "currentColor",
-        fill: "currentColor",
-        strokeWidth: "0"
-      }, conf.attr, attr, svgProps, {
-        className,
-        style: __assign(__assign({
-          color: props.color || conf.color
-        }, conf.style), props.style),
-        height: computedSize,
-        width: computedSize,
-        xmlns: "http://www.w3.org/2000/svg"
-      }), title && import_react9.default.createElement("title", null, title), props.children);
-    };
-    return IconContext !== void 0 ? import_react9.default.createElement(IconContext.Consumer, null, function(conf) {
-      return elem(conf);
-    }) : elem(DefaultContext);
-  }
-
-  // node_modules/react-icons/Sl/index.esm.js
-  function SlClose(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M512 0C229.232 0 0 229.232 0 512c0 282.784 229.232 512 512 512 282.784 0 512-229.216 512-512C1024 229.232 794.784 0 512 0zm0 961.008c-247.024 0-448-201.984-448-449.01 0-247.024 200.976-448 448-448s448 200.977 448 448-200.976 449.01-448 449.01zm181.008-630.016c-12.496-12.496-32.752-12.496-45.248 0L512 466.752l-135.76-135.76c-12.496-12.496-32.752-12.496-45.264 0-12.496 12.496-12.496 32.752 0 45.248L466.736 512l-135.76 135.76c-12.496 12.48-12.496 32.769 0 45.249 12.496 12.496 32.752 12.496 45.264 0L512 557.249l135.76 135.76c12.496 12.496 32.752 12.496 45.248 0 12.496-12.48 12.496-32.769 0-45.249L557.248 512l135.76-135.76c12.512-12.512 12.512-32.768 0-45.248z" } }] })(props);
-  }
-  function SlLock(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M800 384h-32V261.872C768 115.024 661.744 0 510.816 0 359.28 0 256 117.472 256 261.872V384h-32c-70.592 0-128 57.408-128 128v384c0 70.592 57.408 128 128 128h576c70.592 0 128-57.408 128-128V512c0-70.592-57.408-128-128-128zM320 261.872C320 152.784 394.56 64 510.816 64 625.872 64 704 150.912 704 261.872V384H320V261.872zM864.001 896c0 35.28-28.72 64-64 64h-576c-35.28 0-64-28.72-64-64V512c0-35.28 28.72-64 64-64h576c35.28 0 64 28.72 64 64v384zm-352-320c-35.344 0-64 28.656-64 64 0 23.632 12.96 44.032 32 55.12V800c0 17.664 14.336 32 32 32s32-14.336 32-32V695.12c19.04-11.088 32-31.504 32-55.12 0-35.344-28.656-64-64-64z" } }] })(props);
-  }
-  function SlMagnifier(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M1014.64 969.04L703.71 656.207c57.952-69.408 92.88-158.704 92.88-256.208 0-220.912-179.088-400-400-400s-400 179.088-400 400 179.088 400 400 400c100.368 0 192.048-37.056 262.288-98.144l310.496 312.448c12.496 12.497 32.769 12.497 45.265 0 12.48-12.496 12.48-32.752 0-45.263zM396.59 736.527c-185.856 0-336.528-150.672-336.528-336.528S210.734 63.471 396.59 63.471c185.856 0 336.528 150.672 336.528 336.528S582.446 736.527 396.59 736.527z" } }] })(props);
-  }
-  function SlMenu(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M27 193.6c-8.2-8.2-12.2-18.6-12.2-31.2s4-23 12.2-31.2S45.6 119 58.2 119h912.4c12.6 0 23 4 31.2 12.2s12.2 18.6 12.2 31.2-4 23-12.2 31.2-18.6 12.2-31.2 12.2H58.2c-12.6 0-23-4-31.2-12.2zm974.8 285.2c8.2 8.2 12.2 18.6 12.2 31.2s-4 23-12.2 31.2-18.6 12.2-31.2 12.2H58.2c-12.6 0-23-4-31.2-12.2S14.8 522.6 14.8 510s4-23 12.2-31.2 18.6-12.2 31.2-12.2h912.4c12.6 0 23 4 31.2 12.2zm0 347.4c8.2 8.2 12.2 18.6 12.2 31.2s-4 23-12.2 31.2-18.6 12.2-31.2 12.2H58.2c-12.6 0-23-4-31.2-12.2S14.8 870 14.8 857.4s4-23 12.2-31.2S45.6 814 58.2 814h912.4c12.6 0 23 4.2 31.2 12.2z" } }] })(props);
-  }
-  function SlUser(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M511.728 64c108.672 0 223.92 91.534 223.92 159.854v159.92c0 61.552-25.6 179.312-94.256 233.376a63.99 63.99 0 0 0-23.968 57.809c2.624 22.16 16.592 41.312 36.848 50.625l278.496 132.064c2.176.992 26.688 5.104 26.688 39.344l.032 62.464L64 959.504V894.56c0-25.44 19.088-33.425 26.72-36.945l281.023-132.624c20.16-9.248 34.065-28.32 36.769-50.32 2.72-22-6.16-43.84-23.456-57.712-66.48-53.376-97.456-170.704-97.456-233.185v-159.92C287.615 157.007 404.016 64 511.728 64zm0-64.002c-141.312 0-288.127 117.938-288.127 223.857v159.92c0 69.872 31.888 211.248 121.392 283.088l-281.04 132.64S.001 827.999.001 863.471v96.032c0 35.344 28.64 63.968 63.951 63.968h895.552c35.344 0 63.968-28.624 63.968-63.968v-96.032c0-37.6-63.968-63.968-63.968-63.968L681.008 667.439c88.656-69.776 118.656-206.849 118.656-283.665v-159.92c0-105.92-146.64-223.855-287.936-223.855z" } }] })(props);
-  }
-
-  // src/components/Search.js
-  var import_react13 = __toESM(require_react(), 1);
-
-  // src/context/APIContext.js
-  var import_react10 = __toESM(require_react(), 1);
+  // src/pages/Movies.js
+  var import_react20 = __toESM(require_react(), 1);
 
   // env-ns:env
   var API_BASE_URL = "http://localhost:8080/api/v1";
@@ -35462,7 +35855,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     mergeConfig: mergeConfig2
   } = axios_default;
 
-  // src/services/APIService.js
+  // src/services/ExternalAPIService.js
   var getShows = async (category) => {
     return await axios_default.get(
       `https://api.themoviedb.org/3/trending/${category}/day?api_key=${API_KEY}&language=en-US`
@@ -35473,27 +35866,127 @@ Please use another name.` : formatMuiErrorMessage(18));
       `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=${search}&include_adult=false`
     );
   };
-
-  // src/context/APIContext.js
-  var APIContext = (0, import_react10.createContext)();
-  var APIContextProvider = ({ children }) => {
-    const [trending, setTrending] = (0, import_react10.useState)([]);
-    const [movies, setMovies] = (0, import_react10.useState)([]);
-    const [series, setSeries] = (0, import_react10.useState)([]);
-    const [searchResults, setSearchResults] = (0, import_react10.useState)([]);
-    (0, import_react10.useEffect)(() => {
-      getShows("all").then((res) => setTrending(res.data.results)).catch((err) => console.error(err));
-      getShows("movie").then((res) => setMovies(res.data.results)).catch((err) => console.error(err));
-      getShows("tv").then((res) => setSeries(res.data.results)).catch((err) => console.error(err));
-    }, []);
-    return /* @__PURE__ */ import_react10.default.createElement(
-      APIContext.Provider,
-      {
-        value: { trending, movies, series, searchResults, setSearchResults }
-      },
-      children
+  var getShowById = async (type, id) => {
+    return await axios_default.get(
+      `https://api.themoviedb.org/3/${type}/${id}?api_key=${API_KEY}&language=en-US`
     );
   };
+
+  // src/components/Card.js
+  var import_react8 = __toESM(require_react(), 1);
+  var Card = ({ id, poster, title, type }) => {
+    const navigate2 = useNavigate();
+    return /* @__PURE__ */ import_react8.default.createElement("div", { className: "card" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "card-image", onClick: () => navigate2(`/${type}/${id}`) }, /* @__PURE__ */ import_react8.default.createElement(
+      "img",
+      {
+        src: poster,
+        alt: title,
+        onClick: () => navigate2(`/${type}/${id}`)
+      }
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "card-content" }, /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "body2", className: "card-title" }, title)));
+  };
+  var Card_default = Card;
+
+  // src/components/Appbar.js
+  var import_react18 = __toESM(require_react(), 1);
+
+  // node_modules/react-icons/lib/esm/iconBase.js
+  var import_react10 = __toESM(require_react());
+
+  // node_modules/react-icons/lib/esm/iconContext.js
+  var import_react9 = __toESM(require_react());
+  var DefaultContext = {
+    color: void 0,
+    size: void 0,
+    className: void 0,
+    style: void 0,
+    attr: void 0
+  };
+  var IconContext = import_react9.default.createContext && import_react9.default.createContext(DefaultContext);
+
+  // node_modules/react-icons/lib/esm/iconBase.js
+  var __assign = function() {
+    __assign = Object.assign || function(t) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s)
+          if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+      }
+      return t;
+    };
+    return __assign.apply(this, arguments);
+  };
+  var __rest = function(s, e) {
+    var t = {};
+    for (var p in s)
+      if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+          t[p[i]] = s[p[i]];
+      }
+    return t;
+  };
+  function Tree2Element(tree) {
+    return tree && tree.map(function(node2, i) {
+      return import_react10.default.createElement(node2.tag, __assign({
+        key: i
+      }, node2.attr), Tree2Element(node2.child));
+    });
+  }
+  function GenIcon(data) {
+    return function(props) {
+      return import_react10.default.createElement(IconBase, __assign({
+        attr: __assign({}, data.attr)
+      }, props), Tree2Element(data.child));
+    };
+  }
+  function IconBase(props) {
+    var elem = function(conf) {
+      var attr = props.attr, size = props.size, title = props.title, svgProps = __rest(props, ["attr", "size", "title"]);
+      var computedSize = size || conf.size || "1em";
+      var className;
+      if (conf.className)
+        className = conf.className;
+      if (props.className)
+        className = (className ? className + " " : "") + props.className;
+      return import_react10.default.createElement("svg", __assign({
+        stroke: "currentColor",
+        fill: "currentColor",
+        strokeWidth: "0"
+      }, conf.attr, attr, svgProps, {
+        className,
+        style: __assign(__assign({
+          color: props.color || conf.color
+        }, conf.style), props.style),
+        height: computedSize,
+        width: computedSize,
+        xmlns: "http://www.w3.org/2000/svg"
+      }), title && import_react10.default.createElement("title", null, title), props.children);
+    };
+    return IconContext !== void 0 ? import_react10.default.createElement(IconContext.Consumer, null, function(conf) {
+      return elem(conf);
+    }) : elem(DefaultContext);
+  }
+
+  // node_modules/react-icons/Sl/index.esm.js
+  function SlClose(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M512 0C229.232 0 0 229.232 0 512c0 282.784 229.232 512 512 512 282.784 0 512-229.216 512-512C1024 229.232 794.784 0 512 0zm0 961.008c-247.024 0-448-201.984-448-449.01 0-247.024 200.976-448 448-448s448 200.977 448 448-200.976 449.01-448 449.01zm181.008-630.016c-12.496-12.496-32.752-12.496-45.248 0L512 466.752l-135.76-135.76c-12.496-12.496-32.752-12.496-45.264 0-12.496 12.496-12.496 32.752 0 45.248L466.736 512l-135.76 135.76c-12.496 12.48-12.496 32.769 0 45.249 12.496 12.496 32.752 12.496 45.264 0L512 557.249l135.76 135.76c12.496 12.496 32.752 12.496 45.248 0 12.496-12.48 12.496-32.769 0-45.249L557.248 512l135.76-135.76c12.512-12.512 12.512-32.768 0-45.248z" } }] })(props);
+  }
+  function SlLock(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M800 384h-32V261.872C768 115.024 661.744 0 510.816 0 359.28 0 256 117.472 256 261.872V384h-32c-70.592 0-128 57.408-128 128v384c0 70.592 57.408 128 128 128h576c70.592 0 128-57.408 128-128V512c0-70.592-57.408-128-128-128zM320 261.872C320 152.784 394.56 64 510.816 64 625.872 64 704 150.912 704 261.872V384H320V261.872zM864.001 896c0 35.28-28.72 64-64 64h-576c-35.28 0-64-28.72-64-64V512c0-35.28 28.72-64 64-64h576c35.28 0 64 28.72 64 64v384zm-352-320c-35.344 0-64 28.656-64 64 0 23.632 12.96 44.032 32 55.12V800c0 17.664 14.336 32 32 32s32-14.336 32-32V695.12c19.04-11.088 32-31.504 32-55.12 0-35.344-28.656-64-64-64z" } }] })(props);
+  }
+  function SlMagnifier(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M1014.64 969.04L703.71 656.207c57.952-69.408 92.88-158.704 92.88-256.208 0-220.912-179.088-400-400-400s-400 179.088-400 400 179.088 400 400 400c100.368 0 192.048-37.056 262.288-98.144l310.496 312.448c12.496 12.497 32.769 12.497 45.265 0 12.48-12.496 12.48-32.752 0-45.263zM396.59 736.527c-185.856 0-336.528-150.672-336.528-336.528S210.734 63.471 396.59 63.471c185.856 0 336.528 150.672 336.528 336.528S582.446 736.527 396.59 736.527z" } }] })(props);
+  }
+  function SlMenu(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M27 193.6c-8.2-8.2-12.2-18.6-12.2-31.2s4-23 12.2-31.2S45.6 119 58.2 119h912.4c12.6 0 23 4 31.2 12.2s12.2 18.6 12.2 31.2-4 23-12.2 31.2-18.6 12.2-31.2 12.2H58.2c-12.6 0-23-4-31.2-12.2zm974.8 285.2c8.2 8.2 12.2 18.6 12.2 31.2s-4 23-12.2 31.2-18.6 12.2-31.2 12.2H58.2c-12.6 0-23-4-31.2-12.2S14.8 522.6 14.8 510s4-23 12.2-31.2 18.6-12.2 31.2-12.2h912.4c12.6 0 23 4 31.2 12.2zm0 347.4c8.2 8.2 12.2 18.6 12.2 31.2s-4 23-12.2 31.2-18.6 12.2-31.2 12.2H58.2c-12.6 0-23-4-31.2-12.2S14.8 870 14.8 857.4s4-23 12.2-31.2S45.6 814 58.2 814h912.4c12.6 0 23 4.2 31.2 12.2z" } }] })(props);
+  }
+  function SlUser(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M511.728 64c108.672 0 223.92 91.534 223.92 159.854v159.92c0 61.552-25.6 179.312-94.256 233.376a63.99 63.99 0 0 0-23.968 57.809c2.624 22.16 16.592 41.312 36.848 50.625l278.496 132.064c2.176.992 26.688 5.104 26.688 39.344l.032 62.464L64 959.504V894.56c0-25.44 19.088-33.425 26.72-36.945l281.023-132.624c20.16-9.248 34.065-28.32 36.769-50.32 2.72-22-6.16-43.84-23.456-57.712-66.48-53.376-97.456-170.704-97.456-233.185v-159.92C287.615 157.007 404.016 64 511.728 64zm0-64.002c-141.312 0-288.127 117.938-288.127 223.857v159.92c0 69.872 31.888 211.248 121.392 283.088l-281.04 132.64S.001 827.999.001 863.471v96.032c0 35.344 28.64 63.968 63.951 63.968h895.552c35.344 0 63.968-28.624 63.968-63.968v-96.032c0-37.6-63.968-63.968-63.968-63.968L681.008 667.439c88.656-69.776 118.656-206.849 118.656-283.665v-159.92c0-105.92-146.64-223.855-287.936-223.855z" } }] })(props);
+  }
 
   // src/context/AppbarContext.js
   var import_react11 = __toESM(require_react(), 1);
@@ -35503,7 +35996,6 @@ Please use another name.` : formatMuiErrorMessage(18));
     const [showMobileSearch, setShowMobileSearch] = (0, import_react11.useState)(false);
     const [showDropdown, setShowDropdown] = (0, import_react11.useState)(false);
     const [search, setSearch] = (0, import_react11.useState)("");
-    const [location, setLocation] = (0, import_react11.useState)("");
     return /* @__PURE__ */ import_react11.default.createElement(
       AppbarContext.Provider,
       {
@@ -35515,34 +36007,7 @@ Please use another name.` : formatMuiErrorMessage(18));
           showDropdown,
           setShowDropdown,
           search,
-          setSearch,
-          location,
-          setLocation
-        }
-      },
-      children
-    );
-  };
-
-  // src/context/UserContext.js
-  var import_react12 = __toESM(require_react(), 1);
-  var UserContext = (0, import_react12.createContext)();
-  var UserContextProvider = ({ children }) => {
-    const [isUserLoggedIn, setIsUserLoggedIn] = (0, import_react12.useState)(false);
-    const [userData, setUserData] = (0, import_react12.useState)({
-      id: 0,
-      token: "",
-      firstName: "",
-      lastName: ""
-    });
-    return /* @__PURE__ */ import_react12.default.createElement(
-      UserContext.Provider,
-      {
-        value: {
-          isUserLoggedIn,
-          setIsUserLoggedIn,
-          userData,
-          setUserData
+          setSearch
         }
       },
       children
@@ -35550,29 +36015,30 @@ Please use another name.` : formatMuiErrorMessage(18));
   };
 
   // src/components/Search.js
+  var import_react13 = __toESM(require_react(), 1);
+
+  // src/context/SearchContext.js
+  var import_react12 = __toESM(require_react(), 1);
+  var SearchContext = (0, import_react12.createContext)();
+  var SearchContextProvider = ({ children }) => {
+    const [searchResults, setSearchResults] = (0, import_react12.useState)([]);
+    return /* @__PURE__ */ import_react12.default.createElement(SearchContext.Provider, { value: { searchResults, setSearchResults } }, children);
+  };
+
+  // src/components/Search.js
   var Search = () => {
     const { search, setSearch } = (0, import_react13.useContext)(AppbarContext);
-    const { setSearchResults } = (0, import_react13.useContext)(APIContext);
-    const { setIsUserLoggedIn } = (0, import_react13.useContext)(UserContext);
-    const navigate = useNavigate();
+    const { setSearchResults } = (0, import_react13.useContext)(SearchContext);
+    const navigate2 = useNavigate();
     const handleSearch = (e) => {
       e.preventDefault();
       getSearchResults(search).then((res) => setSearchResults(res.data.results)).catch((err) => console.error(err));
-      navigate("/search");
+      navigate2("/search");
     };
     (0, import_react13.useEffect)(() => {
-      let user = localStorage.getItem("user");
-      if (!user) {
-        setIsUserLoggedIn(false);
-        navigate("/login");
-      }
-      if (!search) {
-        let loc = localStorage.getItem("location");
-        if (loc) {
-          navigate(loc);
-        } else {
-          navigate("/home");
-        }
+      let location = window.location.href;
+      if (location == "http://localhost:8000/#/search" && !search) {
+        window.history.back();
       }
     }, [search]);
     return /* @__PURE__ */ import_react13.default.createElement("div", { className: "search-container" }, /* @__PURE__ */ import_react13.default.createElement(SlMagnifier, { className: "search-icon" }), /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSearch }, /* @__PURE__ */ import_react13.default.createElement(
@@ -35609,8 +36075,8 @@ Please use another name.` : formatMuiErrorMessage(18));
     }
   ];
   var MobileNav = () => {
-    const { showMobileNav, setShowMobileNav, setShowMobileSearch, setLocation } = (0, import_react14.useContext)(AppbarContext);
-    const navigate = useNavigate();
+    const { showMobileNav, setShowMobileNav, setShowMobileSearch } = (0, import_react14.useContext)(AppbarContext);
+    const navigate2 = useNavigate();
     return /* @__PURE__ */ import_react14.default.createElement(Box_default, { className: `mobile-nav  ${showMobileNav && "mobile-nav-open"}` }, /* @__PURE__ */ import_react14.default.createElement(
       Box_default,
       {
@@ -35624,8 +36090,7 @@ Please use another name.` : formatMuiErrorMessage(18));
           onClick: () => {
             setShowMobileNav(false);
             setShowMobileSearch(false);
-            setLocation(link.to);
-            navigate(link.to);
+            navigate2(link.to);
             window.scroll(0, 0);
           }
         },
@@ -35639,12 +36104,12 @@ Please use another name.` : formatMuiErrorMessage(18));
   var import_react15 = __toESM(require_react(), 1);
   var MobileSearch = () => {
     const { showMobileSearch, search, setSearch } = (0, import_react15.useContext)(AppbarContext);
-    const { setSearchResults } = (0, import_react15.useContext)(APIContext);
-    const navigate = useNavigate();
+    const { setSearchResults } = (0, import_react15.useContext)(SearchContext);
+    const navigate2 = useNavigate();
     const handleSearch = (e) => {
       e.preventDefault();
       getSearchResults(search).then((res) => setSearchResults(res.data.results)).catch((err) => console.error(err));
-      navigate("/search");
+      navigate2("/search");
     };
     return /* @__PURE__ */ import_react15.default.createElement(
       Box_default,
@@ -35670,7 +36135,7 @@ Please use another name.` : formatMuiErrorMessage(18));
   var import_react17 = __toESM(require_react(), 1);
   var Dropdown = () => {
     const { showDropdown, setShowDropdown, setLocation } = (0, import_react17.useContext)(AppbarContext);
-    const navigate = useNavigate();
+    const navigate2 = useNavigate();
     const handleProfile = () => {
       setShowDropdown(false);
     };
@@ -35684,9 +36149,19 @@ Please use another name.` : formatMuiErrorMessage(18));
       if (loc) {
         localStorage.removeItem("location");
       }
-      navigate("/");
+      navigate2("/");
     };
-    return /* @__PURE__ */ import_react16.default.createElement(Box_default, { className: `dropdown-container ${!showDropdown && "dropdown-close"}` }, /* @__PURE__ */ import_react16.default.createElement(Box_default, { className: "dropdown-link", onClick: handleProfile }, "Profile"), /* @__PURE__ */ import_react16.default.createElement(Box_default, { className: "dropdown-link", onClick: handleLogout }, "Logout"));
+    return /* @__PURE__ */ import_react16.default.createElement(Box_default, { className: `dropdown-container ${!showDropdown && "dropdown-close"}` }, /* @__PURE__ */ import_react16.default.createElement(
+      Box_default,
+      {
+        className: "dropdown-link",
+        onClick: () => {
+          handleProfile();
+          navigate2("/profile");
+        }
+      },
+      "Profile"
+    ), /* @__PURE__ */ import_react16.default.createElement(Box_default, { className: "dropdown-link", onClick: handleLogout }, "Logout"));
   };
   var Dropdown_default = Dropdown;
 
@@ -35720,11 +36195,9 @@ Please use another name.` : formatMuiErrorMessage(18));
       setShowMobileSearch,
       showDropdown,
       setShowDropdown,
-      setLocation,
       setSearch
     } = (0, import_react18.useContext)(AppbarContext);
-    const { userData } = (0, import_react18.useContext)(UserContext);
-    const navigate = useNavigate();
+    const navigate2 = useNavigate();
     return /* @__PURE__ */ import_react18.default.createElement(AppBar_default, { elevation: 0, sx: { color: "#f3f3f3" } }, /* @__PURE__ */ import_react18.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react18.default.createElement(Container_default, null, /* @__PURE__ */ import_react18.default.createElement(Box_default, { className: "nav" }, /* @__PURE__ */ import_react18.default.createElement(MobileNav_default, null), /* @__PURE__ */ import_react18.default.createElement(MobileSearch_default, null), /* @__PURE__ */ import_react18.default.createElement(Box_default, { className: "menu-icon" }, !showMobileNav ? /* @__PURE__ */ import_react18.default.createElement(
       SlMenu,
       {
@@ -35748,10 +36221,9 @@ Please use another name.` : formatMuiErrorMessage(18));
         alt: "Logo",
         className: "logo",
         onClick: () => {
-          setLocation("/home");
           setSearch("");
           setShowDropdown(false);
-          navigate("/home");
+          navigate2("/home");
           window.scroll(0, 0);
         }
       }
@@ -35761,12 +36233,10 @@ Please use another name.` : formatMuiErrorMessage(18));
         key: index,
         sx: { cursor: "pointer" },
         onClick: () => {
-          setLocation(link.to);
           setSearch("");
           setShowDropdown(false);
-          navigate(link.to);
+          navigate2(link.to);
           window.scroll(0, 0);
-          localStorage.setItem("location", link.to);
         }
       },
       link.name
@@ -35782,7 +36252,6 @@ Please use another name.` : formatMuiErrorMessage(18));
         }
       },
       /* @__PURE__ */ import_react18.default.createElement(SlUser, { style: { cursor: "pointer" } }),
-      /* @__PURE__ */ import_react18.default.createElement(Typography_default, { variant: "body2", sx: { cursor: "pointer" } }, userData.firstName),
       /* @__PURE__ */ import_react18.default.createElement(Dropdown_default, null)
     )), /* @__PURE__ */ import_react18.default.createElement(Box_default, { className: "nav-icons" }, /* @__PURE__ */ import_react18.default.createElement(
       SlMagnifier,
@@ -35811,157 +36280,45 @@ Please use another name.` : formatMuiErrorMessage(18));
   // src/components/Footer.js
   var import_react19 = __toESM(require_react(), 1);
   var Footer = () => {
-    return /* @__PURE__ */ import_react19.default.createElement("div", { className: "footer" }, "All Rights Reserved. \xA9 Simon James Villarin, Andrei San Miguel, Leo Cruz");
+    const navigate2 = useNavigate();
+    return /* @__PURE__ */ import_react19.default.createElement("div", { className: "footer" }, /* @__PURE__ */ import_react19.default.createElement(Container_default, null, /* @__PURE__ */ import_react19.default.createElement("div", { className: "footer-container" }, /* @__PURE__ */ import_react19.default.createElement("div", { className: "left-footer-container" }, /* @__PURE__ */ import_react19.default.createElement(
+      "img",
+      {
+        src: logo_default,
+        alt: "Logo",
+        className: "logo",
+        onClick: () => navigate2("/home")
+      }
+    ), /* @__PURE__ */ import_react19.default.createElement(Box_default, null, /* @__PURE__ */ import_react19.default.createElement(Typography_default, { variant: "body2" }, "\xA9 2023 SevenShows. All Rights Reserved."), /* @__PURE__ */ import_react19.default.createElement(Typography_default, { variant: "body2" }, "Property of Simon James Villarin, Andrei San Miguel, Leo Cruz."))), /* @__PURE__ */ import_react19.default.createElement("div", { className: "right-footer-container" }, /* @__PURE__ */ import_react19.default.createElement(Typography_default, { paragraph: true, sx: { mb: 0 } }, "SevenShows allows you to discover your next binge-worthy shows. Add shows to your list and stay up-to-date with the latest releases, as we provide comprehensive information about movies and TV shows."), /* @__PURE__ */ import_react19.default.createElement(Box_default, { className: "footer-links" }, /* @__PURE__ */ import_react19.default.createElement("div", { className: "footer-link", onClick: () => navigate2("/terms") }, "Terms of Service"), /* @__PURE__ */ import_react19.default.createElement("div", null, "\xA0-\xA0"), /* @__PURE__ */ import_react19.default.createElement(
+      "div",
+      {
+        className: "footer-link",
+        onClick: () => navigate2("/privacy-policy")
+      },
+      "Privacy Policy"
+    ), /* @__PURE__ */ import_react19.default.createElement("div", null, "\xA0-\xA0"), /* @__PURE__ */ import_react19.default.createElement("div", { className: "footer-link", onClick: () => navigate2("/contact") }, "Contact Us"))))));
   };
   var Footer_default = Footer;
 
   // src/pages/Movies.js
-  var import_react22 = __toESM(require_react(), 1);
-
-  // src/components/Card.js
-  var import_react21 = __toESM(require_react(), 1);
-
-  // src/services/UserService.js
-  var buildHeaders = (token2) => {
-    return {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${token2}`
-    };
-  };
-  var register = async (user) => {
-    return await axios_default.post(`${API_BASE_URL}/auth/register`, user);
-  };
-  var login = async (user) => {
-    return await axios_default.post(`${API_BASE_URL}/auth/login`, user);
-  };
-  var getUserId = async () => {
-    return await axios_default.get(`${API_BASE_URL}/auth/id`);
-  };
-  var getUserById = async (id, token2) => {
-    return await axios_default.get(`${API_BASE_URL}/user/${id}`, {
-      headers: buildHeaders(token2)
-    });
-  };
-
-  // src/services/UserListService.js
-  var getUserListById = async (id, token2) => {
-    return await axios_default.get(`${API_BASE_URL}/userlist/${id}`, {
-      headers: buildHeaders(token2)
-    });
-  };
-  var addUserList = async (id, userList, token2) => {
-    return await axios_default.post(`${API_BASE_URL}/userlist/${id}`, userList, {
-      headers: buildHeaders(token2)
-    });
-  };
-  var removeUserList = async (id, token2) => {
-    return await axios_default.delete(`${API_BASE_URL}/userlist/${id}`, {
-      headers: buildHeaders(token2)
-    });
-  };
-
-  // node_modules/react-icons/md/index.esm.js
-  function MdDeleteOutline(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0V0z" } }, { "tag": "path", "attr": { "d": "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z" } }] })(props);
-  }
-  function MdAdd(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" } }, { "tag": "path", "attr": { "d": "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" } }] })(props);
-  }
-
-  // src/context/UserListContext.js
-  var import_react20 = __toESM(require_react(), 1);
-  var UserListContext = (0, import_react20.createContext)();
-  var UserListProvider = ({ children }) => {
-    const [userList, setUserList] = (0, import_react20.useState)([]);
-    const { userData, isUserLoggedIn, setIsUserLoggedIn } = (0, import_react20.useContext)(UserContext);
-    const navigate = useNavigate();
-    let location = localStorage.getItem("location");
-    const handleAxiosError = () => {
-      let user = localStorage.getItem("user");
-      if (user) {
-        localStorage.removeItem("user");
-      }
-      localStorage.getItem("location");
-      if (location) {
-        localStorage.removeItem("location");
-      }
-      setIsUserLoggedIn(false);
-      navigate("/login");
-    };
-    (0, import_react20.useEffect)(() => {
-      getUserListById(userData.id, userData.token).then((res) => {
-        setUserList(res.data.reverse());
-      }).catch((err) => handleAxiosError());
-    }, [location]);
-    return /* @__PURE__ */ import_react20.default.createElement(UserListContext.Provider, { value: { userList, setUserList } }, children);
-  };
-
-  // src/components/Card.js
-  var Card = ({ poster, title, id }) => {
-    const { userData, setIsUserLoggedIn } = (0, import_react21.useContext)(UserContext);
-    const { userList, setUserList } = (0, import_react21.useContext)(UserListContext);
-    const { search } = (0, import_react21.useContext)(AppbarContext);
-    const { location } = (0, import_react21.useContext)(AppbarContext);
-    const handleAxiosError = () => {
-      let user = localStorage.getItem("user");
-      if (user) {
-        localStorage.removeItem("user");
-      }
-      if (location) {
-        localStorage.removeItem("location");
-      }
-      setIsUserLoggedIn(false);
-      useNavigate("/login");
-    };
-    const handleAddToList = (id2, poster2, title2) => {
-      let payload = {
-        userId: userData.id,
-        showId: id2,
-        poster: poster2,
-        title: title2
-      };
-      addUserList(id2, payload, userData.token).then((res) => {
-        if (res.status == 200) {
-          let findShowId = userList.find((list) => list.showId == id2);
-          if (!findShowId) {
-            setUserList([payload, ...userList]);
-          }
-        } else {
-          handleAxiosError();
-        }
-      }).catch((err) => {
-        handleAxiosError();
-        console.log(err);
-      });
-    };
-    const handleRemoveFromList = (id2) => {
-      removeUserList(id2, userData.token).then((res) => {
-        if (res.status == 200) {
-          let newUserList = userList.filter((list) => list.showId != id2);
-          setUserList(newUserList);
-        } else {
-          handleAxiosError();
-        }
-      }).catch((err) => {
-        handleAxiosError();
-        console.log(err);
-      });
-    };
-    return /* @__PURE__ */ import_react21.default.createElement("div", { className: "card" }, /* @__PURE__ */ import_react21.default.createElement("div", { className: "card-image" }, /* @__PURE__ */ import_react21.default.createElement("img", { src: poster, alt: title }), location != "/list" || search ? /* @__PURE__ */ import_react21.default.createElement(
-      "button",
-      {
-        className: "card-btn",
-        onClick: () => handleAddToList(id, poster, title)
-      },
-      /* @__PURE__ */ import_react21.default.createElement(MdAdd, null)
-    ) : /* @__PURE__ */ import_react21.default.createElement("button", { className: "card-btn" }, /* @__PURE__ */ import_react21.default.createElement(MdDeleteOutline, { onClick: () => handleRemoveFromList(id) }))), /* @__PURE__ */ import_react21.default.createElement("div", { className: "card-content" }, /* @__PURE__ */ import_react21.default.createElement(Typography_default, { variant: "body2", className: "card-title" }, title)));
-  };
-  var Card_default = Card;
-
-  // src/pages/Movies.js
   var Movies = () => {
-    const { movies } = (0, import_react22.useContext)(APIContext);
-    return /* @__PURE__ */ import_react22.default.createElement(Container_default, null, /* @__PURE__ */ import_react22.default.createElement(
+    const [movies, setMovies] = (0, import_react20.useState)([]);
+    const [loading, setLoading] = (0, import_react20.useState)(false);
+    (0, import_react20.useEffect)(() => {
+      getShows("movie").then((res) => setMovies(res.data.results)).catch((err) => console.log(err));
+      setTimeout(() => {
+        setLoading(true);
+      }, 1e3);
+    }, []);
+    return /* @__PURE__ */ import_react20.default.createElement(import_react20.default.Fragment, null, /* @__PURE__ */ import_react20.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react20.default.createElement(Container_default, null, !loading ? /* @__PURE__ */ import_react20.default.createElement(
+      Skeleton_default,
+      {
+        animation: "wave",
+        width: "23%",
+        sx: { mt: 10, mb: 3, height: 60 }
+      },
+      /* @__PURE__ */ import_react20.default.createElement(Typography_default, null, ".")
+    ) : /* @__PURE__ */ import_react20.default.createElement(
       Typography_default,
       {
         variant: "h5",
@@ -35974,23 +36331,46 @@ Please use another name.` : formatMuiErrorMessage(18));
         }
       },
       "BLOCKBUSTER MOVIES"
-    ), /* @__PURE__ */ import_react22.default.createElement("div", { className: "card-container" }, movies.map((show) => /* @__PURE__ */ import_react22.default.createElement(
+    ), /* @__PURE__ */ import_react20.default.createElement("div", { className: "card-container" }, !loading ? movies.map((show) => /* @__PURE__ */ import_react20.default.createElement(Box_default, { key: show.id }, /* @__PURE__ */ import_react20.default.createElement(
+      Skeleton_default,
+      {
+        variant: "rectangular",
+        animation: "wave",
+        sx: { height: 270, width: 208, borderRadius: 2 }
+      }
+    ), /* @__PURE__ */ import_react20.default.createElement(Skeleton_default, { width: "100%", sx: { height: 35 } }, /* @__PURE__ */ import_react20.default.createElement(Typography_default, null, ".")))) : movies.map((show) => /* @__PURE__ */ import_react20.default.createElement(
       Card_default,
       {
         key: show.id,
         id: show.id,
         poster: `${POSTER_IMG}${show.poster_path}` || `${POSTER_IMG}${show.backdrop_path}`,
-        title: show.title || show.name
+        title: show.title || show.name,
+        type: show.media_type
       }
-    ))));
+    )))), /* @__PURE__ */ import_react20.default.createElement(Footer_default, null));
   };
   var Movies_default = Movies;
 
   // src/pages/Series.js
-  var import_react23 = __toESM(require_react(), 1);
+  var import_react21 = __toESM(require_react(), 1);
   var Series = () => {
-    const { series } = (0, import_react23.useContext)(APIContext);
-    return /* @__PURE__ */ import_react23.default.createElement(Container_default, null, /* @__PURE__ */ import_react23.default.createElement(
+    const [series, setSeries] = (0, import_react21.useState)([]);
+    const [loading, setLoading] = (0, import_react21.useState)(false);
+    (0, import_react21.useEffect)(() => {
+      getShows("tv").then((res) => setSeries(res.data.results)).catch((err) => console.log(err));
+      setTimeout(() => {
+        setLoading(true);
+      }, 1e3);
+    }, []);
+    return /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react21.default.createElement(Container_default, null, !loading ? /* @__PURE__ */ import_react21.default.createElement(
+      Skeleton_default,
+      {
+        animation: "wave",
+        width: "23%",
+        sx: { mt: 10, mb: 3, height: 60 }
+      },
+      /* @__PURE__ */ import_react21.default.createElement(Typography_default, null, ".")
+    ) : /* @__PURE__ */ import_react21.default.createElement(
       Typography_default,
       {
         variant: "h5",
@@ -36003,23 +36383,46 @@ Please use another name.` : formatMuiErrorMessage(18));
         }
       },
       "BINGE WORTHY TV SERIES"
-    ), /* @__PURE__ */ import_react23.default.createElement("div", { className: "card-container" }, series.map((show) => /* @__PURE__ */ import_react23.default.createElement(
+    ), /* @__PURE__ */ import_react21.default.createElement("div", { className: "card-container" }, !loading ? series.map((show) => /* @__PURE__ */ import_react21.default.createElement(Box_default, { key: show.id }, /* @__PURE__ */ import_react21.default.createElement(
+      Skeleton_default,
+      {
+        variant: "rectangular",
+        animation: "wave",
+        sx: { height: 270, width: 208, borderRadius: 2 }
+      }
+    ), /* @__PURE__ */ import_react21.default.createElement(Skeleton_default, { width: "100%", sx: { height: 35 } }, /* @__PURE__ */ import_react21.default.createElement(Typography_default, null, ".")))) : series.map((show) => /* @__PURE__ */ import_react21.default.createElement(
       Card_default,
       {
         key: show.id,
         id: show.id,
         poster: `${POSTER_IMG}${show.poster_path}` || `${POSTER_IMG}${show.backdrop_path}`,
-        title: show.title || show.name
+        title: show.title || show.name,
+        type: show.media_type
       }
-    ))));
+    )))), /* @__PURE__ */ import_react21.default.createElement(Footer_default, null));
   };
   var Series_default = Series;
 
   // src/pages/Home.js
-  var import_react24 = __toESM(require_react(), 1);
+  var import_react22 = __toESM(require_react(), 1);
   var Trending = () => {
-    const { trending } = (0, import_react24.useContext)(APIContext);
-    return /* @__PURE__ */ import_react24.default.createElement(Container_default, null, /* @__PURE__ */ import_react24.default.createElement(
+    const [trending, setTrending] = (0, import_react22.useState)([]);
+    const [loading, setLoading] = (0, import_react22.useState)(false);
+    (0, import_react22.useEffect)(() => {
+      getShows("all").then((res) => setTrending(res.data.results)).catch((err) => console.log(err));
+      setTimeout(() => {
+        setLoading(true);
+      }, 1e3);
+    }, []);
+    return /* @__PURE__ */ import_react22.default.createElement(import_react22.default.Fragment, null, /* @__PURE__ */ import_react22.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react22.default.createElement(Container_default, null, !loading ? /* @__PURE__ */ import_react22.default.createElement(
+      Skeleton_default,
+      {
+        animation: "wave",
+        width: "23%",
+        sx: { mt: 10, mb: 3, height: 60 }
+      },
+      /* @__PURE__ */ import_react22.default.createElement(Typography_default, null, ".")
+    ) : /* @__PURE__ */ import_react22.default.createElement(
       Typography_default,
       {
         variant: "h5",
@@ -36032,27 +36435,44 @@ Please use another name.` : formatMuiErrorMessage(18));
         }
       },
       "TRENDING & TOP RATED"
-    ), /* @__PURE__ */ import_react24.default.createElement("div", { className: "card-container" }, trending.map((show) => /* @__PURE__ */ import_react24.default.createElement(
+    ), /* @__PURE__ */ import_react22.default.createElement("div", { className: "card-container" }, !loading ? trending.map((show) => /* @__PURE__ */ import_react22.default.createElement(Box_default, { key: show.id }, /* @__PURE__ */ import_react22.default.createElement(
+      Skeleton_default,
+      {
+        variant: "rectangular",
+        animation: "wave",
+        sx: { height: 270, width: 208, borderRadius: 2 }
+      }
+    ), /* @__PURE__ */ import_react22.default.createElement(Skeleton_default, { width: "100%", sx: { height: 35 } }, /* @__PURE__ */ import_react22.default.createElement(Typography_default, null, ".")))) : trending.map((show) => /* @__PURE__ */ import_react22.default.createElement(
       Card_default,
       {
         key: show.id,
         id: show.id,
         poster: `${POSTER_IMG}${show.poster_path}` || `${POSTER_IMG}${show.backdrop_path}`,
-        title: show.title || show.name
+        title: show.title || show.name,
+        type: show.media_type
       }
-    ))));
+    )))), /* @__PURE__ */ import_react22.default.createElement(Footer_default, null));
   };
   var Home_default = Trending;
 
   // src/pages/LoginForm.js
-  var import_react26 = __toESM(require_react(), 1);
+  var import_react25 = __toESM(require_react(), 1);
 
   // node_modules/react-icons/Fi/index.esm.js
+  function FiEdit(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "strokeWidth": "2", "strokeLinecap": "round", "strokeLinejoin": "round" }, "child": [{ "tag": "path", "attr": { "d": "M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" } }, { "tag": "path", "attr": { "d": "M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" } }] })(props);
+  }
   function FiEyeOff(props) {
     return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "strokeWidth": "2", "strokeLinecap": "round", "strokeLinejoin": "round" }, "child": [{ "tag": "path", "attr": { "d": "M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" } }, { "tag": "line", "attr": { "x1": "1", "y1": "1", "x2": "23", "y2": "23" } }] })(props);
   }
   function FiEye(props) {
     return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "strokeWidth": "2", "strokeLinecap": "round", "strokeLinejoin": "round" }, "child": [{ "tag": "path", "attr": { "d": "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" } }, { "tag": "circle", "attr": { "cx": "12", "cy": "12", "r": "3" } }] })(props);
+  }
+  function FiPlus(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "strokeWidth": "2", "strokeLinecap": "round", "strokeLinejoin": "round" }, "child": [{ "tag": "line", "attr": { "x1": "12", "y1": "5", "x2": "12", "y2": "19" } }, { "tag": "line", "attr": { "x1": "5", "y1": "12", "x2": "19", "y2": "12" } }] })(props);
+  }
+  function FiTrash2(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "strokeWidth": "2", "strokeLinecap": "round", "strokeLinejoin": "round" }, "child": [{ "tag": "polyline", "attr": { "points": "3 6 5 6 21 6" } }, { "tag": "path", "attr": { "d": "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" } }, { "tag": "line", "attr": { "x1": "10", "y1": "11", "x2": "10", "y2": "17" } }, { "tag": "line", "attr": { "x1": "14", "y1": "11", "x2": "14", "y2": "17" } }] })(props);
   }
 
   // node_modules/yup/index.esm.js
@@ -36114,7 +36534,7 @@ Please use another name.` : formatMuiErrorMessage(18));
           path
         });
       if (typeof message === "string")
-        return message.replace(strReg, (_, key) => printValue(params[key]));
+        return message.replace(strReg, (_2, key) => printValue(params[key]));
       if (typeof message === "function")
         return message(params);
       return message;
@@ -36795,7 +37215,7 @@ attempted value: ${formattedValue}
         [isIndex2 ? "index" : "key"]: k,
         path: isIndex2 || k.includes(".") ? `${parentPath || ""}[${value ? k : `"${k}"`}]` : (parentPath ? `${parentPath}.` : "") + key
       });
-      return (_, panic, next2) => this.resolve(testOptions)._validate(value, testOptions, panic, next2);
+      return (_2, panic, next2) => this.resolve(testOptions)._validate(value, testOptions, panic, next2);
     }
     validate(value, options) {
       let schema = this.resolve(Object.assign({}, options, {
@@ -37618,7 +38038,7 @@ attempted value: ${formattedValue}
       return findIndex(keys2, a) - findIndex(keys2, b);
     };
   }
-  var parseJson = (value, _, ctx) => {
+  var parseJson = (value, _2, ctx) => {
     if (typeof value !== "string") {
       return value;
     }
@@ -38200,7 +38620,7 @@ attempted value: ${formattedValue}
   create$1.prototype = TupleSchema.prototype;
 
   // node_modules/formik/dist/formik.esm.js
-  var import_react25 = __toESM(require_react());
+  var import_react23 = __toESM(require_react());
   var import_react_fast_compare = __toESM(require_react_fast_compare());
 
   // node_modules/deepmerge/dist/es.js
@@ -39667,7 +40087,7 @@ attempted value: ${formattedValue}
     return Object.prototype.toString.call(obj) === "[object String]";
   };
   var isEmptyChildren = function isEmptyChildren2(children) {
-    return import_react25.Children.count(children) === 0;
+    return import_react23.Children.count(children) === 0;
   };
   var isPromise = function isPromise2(value) {
     return isObject4(value) && isFunction3(value.then);
@@ -39743,12 +40163,12 @@ attempted value: ${formattedValue}
     }
     return response;
   }
-  var FormikContext = /* @__PURE__ */ (0, import_react25.createContext)(void 0);
+  var FormikContext = /* @__PURE__ */ (0, import_react23.createContext)(void 0);
   FormikContext.displayName = "FormikContext";
   var FormikProvider = FormikContext.Provider;
   var FormikConsumer = FormikContext.Consumer;
   function useFormikContext() {
-    var formik = (0, import_react25.useContext)(FormikContext);
+    var formik = (0, import_react23.useContext)(FormikContext);
     !!!formik ? true ? tiny_warning_esm_default(false, "Formik context is undefined, please verify you are calling useFormikContext() as child of a <Formik> component.") : tiny_warning_esm_default(false) : void 0;
     return formik;
   }
@@ -39825,24 +40245,24 @@ attempted value: ${formattedValue}
       validateOnMount,
       onSubmit
     }, rest);
-    var initialValues = (0, import_react25.useRef)(props.initialValues);
-    var initialErrors = (0, import_react25.useRef)(props.initialErrors || emptyErrors);
-    var initialTouched = (0, import_react25.useRef)(props.initialTouched || emptyTouched);
-    var initialStatus = (0, import_react25.useRef)(props.initialStatus);
-    var isMounted = (0, import_react25.useRef)(false);
-    var fieldRegistry = (0, import_react25.useRef)({});
+    var initialValues = (0, import_react23.useRef)(props.initialValues);
+    var initialErrors = (0, import_react23.useRef)(props.initialErrors || emptyErrors);
+    var initialTouched = (0, import_react23.useRef)(props.initialTouched || emptyTouched);
+    var initialStatus = (0, import_react23.useRef)(props.initialStatus);
+    var isMounted = (0, import_react23.useRef)(false);
+    var fieldRegistry = (0, import_react23.useRef)({});
     if (true) {
-      (0, import_react25.useEffect)(function() {
+      (0, import_react23.useEffect)(function() {
         !(typeof isInitialValid === "undefined") ? true ? tiny_warning_esm_default(false, "isInitialValid has been deprecated and will be removed in future versions of Formik. Please use initialErrors or validateOnMount instead.") : tiny_warning_esm_default(false) : void 0;
       }, []);
     }
-    (0, import_react25.useEffect)(function() {
+    (0, import_react23.useEffect)(function() {
       isMounted.current = true;
       return function() {
         isMounted.current = false;
       };
     }, []);
-    var _React$useReducer = (0, import_react25.useReducer)(formikReducer, {
+    var _React$useReducer = (0, import_react23.useReducer)(formikReducer, {
       values: props.initialValues,
       errors: props.initialErrors || emptyErrors,
       touched: props.initialTouched || emptyTouched,
@@ -39851,7 +40271,7 @@ attempted value: ${formattedValue}
       isValidating: false,
       submitCount: 0
     }), state = _React$useReducer[0], dispatch = _React$useReducer[1];
-    var runValidateHandler = (0, import_react25.useCallback)(function(values2, field) {
+    var runValidateHandler = (0, import_react23.useCallback)(function(values2, field) {
       return new Promise(function(resolve, reject) {
         var maybePromisedErrors = props.validate(values2, field);
         if (maybePromisedErrors == null) {
@@ -39870,7 +40290,7 @@ attempted value: ${formattedValue}
         }
       });
     }, [props.validate]);
-    var runValidationSchema = (0, import_react25.useCallback)(function(values2, field) {
+    var runValidationSchema = (0, import_react23.useCallback)(function(values2, field) {
       var validationSchema = props.validationSchema;
       var schema = isFunction3(validationSchema) ? validationSchema(field) : validationSchema;
       var promise = field && schema.validateAt ? schema.validateAt(field, values2) : validateYupSchema(values2, schema);
@@ -39889,12 +40309,12 @@ attempted value: ${formattedValue}
         });
       });
     }, [props.validationSchema]);
-    var runSingleFieldLevelValidation = (0, import_react25.useCallback)(function(field, value) {
+    var runSingleFieldLevelValidation = (0, import_react23.useCallback)(function(field, value) {
       return new Promise(function(resolve) {
         return resolve(fieldRegistry.current[field].validate(value));
       });
     }, []);
-    var runFieldLevelValidations = (0, import_react25.useCallback)(function(values2) {
+    var runFieldLevelValidations = (0, import_react23.useCallback)(function(values2) {
       var fieldKeysWithValidation = Object.keys(fieldRegistry.current).filter(function(f) {
         return isFunction3(fieldRegistry.current[f].validate);
       });
@@ -39913,7 +40333,7 @@ attempted value: ${formattedValue}
         }, {});
       });
     }, [runSingleFieldLevelValidation]);
-    var runAllValidations = (0, import_react25.useCallback)(function(values2) {
+    var runAllValidations = (0, import_react23.useCallback)(function(values2) {
       return Promise.all([runFieldLevelValidations(values2), props.validationSchema ? runValidationSchema(values2) : {}, props.validate ? runValidateHandler(values2) : {}]).then(function(_ref2) {
         var fieldErrors = _ref2[0], schemaErrors = _ref2[1], validateErrors = _ref2[2];
         var combinedErrors = es_default.all([fieldErrors, schemaErrors, validateErrors], {
@@ -39944,12 +40364,12 @@ attempted value: ${formattedValue}
         return combinedErrors;
       });
     });
-    (0, import_react25.useEffect)(function() {
+    (0, import_react23.useEffect)(function() {
       if (validateOnMount && isMounted.current === true && (0, import_react_fast_compare.default)(initialValues.current, props.initialValues)) {
         validateFormWithHighPriority(initialValues.current);
       }
     }, [validateOnMount, validateFormWithHighPriority]);
-    var resetForm = (0, import_react25.useCallback)(function(nextState) {
+    var resetForm = (0, import_react23.useCallback)(function(nextState) {
       var values2 = nextState && nextState.values ? nextState.values : initialValues.current;
       var errors = nextState && nextState.errors ? nextState.errors : initialErrors.current ? initialErrors.current : props.initialErrors || {};
       var touched = nextState && nextState.touched ? nextState.touched : initialTouched.current ? initialTouched.current : props.initialTouched || {};
@@ -39983,7 +40403,7 @@ attempted value: ${formattedValue}
         dispatchFn();
       }
     }, [props.initialErrors, props.initialStatus, props.initialTouched]);
-    (0, import_react25.useEffect)(function() {
+    (0, import_react23.useEffect)(function() {
       if (isMounted.current === true && !(0, import_react_fast_compare.default)(initialValues.current, props.initialValues)) {
         if (enableReinitialize) {
           initialValues.current = props.initialValues;
@@ -39994,7 +40414,7 @@ attempted value: ${formattedValue}
         }
       }
     }, [enableReinitialize, props.initialValues, resetForm, validateOnMount, validateFormWithHighPriority]);
-    (0, import_react25.useEffect)(function() {
+    (0, import_react23.useEffect)(function() {
       if (enableReinitialize && isMounted.current === true && !(0, import_react_fast_compare.default)(initialErrors.current, props.initialErrors)) {
         initialErrors.current = props.initialErrors || emptyErrors;
         dispatch({
@@ -40003,7 +40423,7 @@ attempted value: ${formattedValue}
         });
       }
     }, [enableReinitialize, props.initialErrors]);
-    (0, import_react25.useEffect)(function() {
+    (0, import_react23.useEffect)(function() {
       if (enableReinitialize && isMounted.current === true && !(0, import_react_fast_compare.default)(initialTouched.current, props.initialTouched)) {
         initialTouched.current = props.initialTouched || emptyTouched;
         dispatch({
@@ -40012,7 +40432,7 @@ attempted value: ${formattedValue}
         });
       }
     }, [enableReinitialize, props.initialTouched]);
-    (0, import_react25.useEffect)(function() {
+    (0, import_react23.useEffect)(function() {
       if (enableReinitialize && isMounted.current === true && !(0, import_react_fast_compare.default)(initialStatus.current, props.initialStatus)) {
         initialStatus.current = props.initialStatus;
         dispatch({
@@ -40078,13 +40498,13 @@ attempted value: ${formattedValue}
       }
       return Promise.resolve();
     });
-    var registerField = (0, import_react25.useCallback)(function(name, _ref3) {
+    var registerField = (0, import_react23.useCallback)(function(name, _ref3) {
       var validate = _ref3.validate;
       fieldRegistry.current[name] = {
         validate
       };
     }, []);
-    var unregisterField = (0, import_react25.useCallback)(function(name) {
+    var unregisterField = (0, import_react23.useCallback)(function(name) {
       delete fieldRegistry.current[name];
     }, []);
     var setTouched = useEventCallback(function(touched, shouldValidate) {
@@ -40095,7 +40515,7 @@ attempted value: ${formattedValue}
       var willValidate = shouldValidate === void 0 ? validateOnBlur : shouldValidate;
       return willValidate ? validateFormWithHighPriority(state.values) : Promise.resolve();
     });
-    var setErrors = (0, import_react25.useCallback)(function(errors) {
+    var setErrors = (0, import_react23.useCallback)(function(errors) {
       dispatch({
         type: "SET_ERRORS",
         payload: errors
@@ -40110,7 +40530,7 @@ attempted value: ${formattedValue}
       var willValidate = shouldValidate === void 0 ? validateOnChange : shouldValidate;
       return willValidate ? validateFormWithHighPriority(resolvedValues) : Promise.resolve();
     });
-    var setFieldError = (0, import_react25.useCallback)(function(field, value) {
+    var setFieldError = (0, import_react23.useCallback)(function(field, value) {
       dispatch({
         type: "SET_FIELD_ERROR",
         payload: {
@@ -40130,7 +40550,7 @@ attempted value: ${formattedValue}
       var willValidate = shouldValidate === void 0 ? validateOnChange : shouldValidate;
       return willValidate ? validateFormWithHighPriority(setIn(state.values, field, value)) : Promise.resolve();
     });
-    var executeChange = (0, import_react25.useCallback)(function(eventOrTextValue, maybePath) {
+    var executeChange = (0, import_react23.useCallback)(function(eventOrTextValue, maybePath) {
       var field = maybePath;
       var val = eventOrTextValue;
       var parsed;
@@ -40177,7 +40597,7 @@ attempted value: ${formattedValue}
       var willValidate = shouldValidate === void 0 ? validateOnBlur : shouldValidate;
       return willValidate ? validateFormWithHighPriority(state.values) : Promise.resolve();
     });
-    var executeBlur = (0, import_react25.useCallback)(function(e, path) {
+    var executeBlur = (0, import_react23.useCallback)(function(e, path) {
       if (e.persist) {
         e.persist();
       }
@@ -40201,7 +40621,7 @@ attempted value: ${formattedValue}
         executeBlur(eventOrString);
       }
     });
-    var setFormikState = (0, import_react25.useCallback)(function(stateOrCb) {
+    var setFormikState = (0, import_react23.useCallback)(function(stateOrCb) {
       if (isFunction3(stateOrCb)) {
         dispatch({
           type: "SET_FORMIK_STATE",
@@ -40216,13 +40636,13 @@ attempted value: ${formattedValue}
         });
       }
     }, []);
-    var setStatus = (0, import_react25.useCallback)(function(status) {
+    var setStatus = (0, import_react23.useCallback)(function(status) {
       dispatch({
         type: "SET_STATUS",
         payload: status
       });
     }, []);
-    var setSubmitting = (0, import_react25.useCallback)(function(isSubmitting) {
+    var setSubmitting = (0, import_react23.useCallback)(function(isSubmitting) {
       dispatch({
         type: "SET_ISSUBMITTING",
         payload: isSubmitting
@@ -40315,7 +40735,7 @@ attempted value: ${formattedValue}
       }
       resetForm();
     });
-    var getFieldMeta = (0, import_react25.useCallback)(function(name) {
+    var getFieldMeta = (0, import_react23.useCallback)(function(name) {
       return {
         value: getIn2(state.values, name),
         error: getIn2(state.errors, name),
@@ -40325,7 +40745,7 @@ attempted value: ${formattedValue}
         initialError: getIn2(initialErrors.current, name)
       };
     }, [state.errors, state.touched, state.values]);
-    var getFieldHelpers = (0, import_react25.useCallback)(function(name) {
+    var getFieldHelpers = (0, import_react23.useCallback)(function(name) {
       return {
         setValue: function setValue(value, shouldValidate) {
           return setFieldValue(name, value, shouldValidate);
@@ -40338,7 +40758,7 @@ attempted value: ${formattedValue}
         }
       };
     }, [setFieldValue, setFieldTouched, setFieldError]);
-    var getFieldProps = (0, import_react25.useCallback)(function(nameOrOptions) {
+    var getFieldProps = (0, import_react23.useCallback)(function(nameOrOptions) {
       var isAnObject = isObject4(nameOrOptions);
       var name = isAnObject ? nameOrOptions.name : nameOrOptions;
       var valueState = getIn2(state.values, name);
@@ -40367,10 +40787,10 @@ attempted value: ${formattedValue}
       }
       return field;
     }, [handleBlur, handleChange, state.values]);
-    var dirty = (0, import_react25.useMemo)(function() {
+    var dirty = (0, import_react23.useMemo)(function() {
       return !(0, import_react_fast_compare.default)(initialValues.current, state.values);
     }, [initialValues.current, state.values]);
-    var isValid = (0, import_react25.useMemo)(function() {
+    var isValid = (0, import_react23.useMemo)(function() {
       return typeof isInitialValid !== "undefined" ? dirty ? state.errors && Object.keys(state.errors).length === 0 : isInitialValid !== false && isFunction3(isInitialValid) ? isInitialValid(props) : isInitialValid : state.errors && Object.keys(state.errors).length === 0;
     }, [isInitialValid, dirty, state.errors, props]);
     var ctx = _extends5({}, state, {
@@ -40411,17 +40831,17 @@ attempted value: ${formattedValue}
   function Formik(props) {
     var formikbag = useFormik(props);
     var component = props.component, children = props.children, render = props.render, innerRef = props.innerRef;
-    (0, import_react25.useImperativeHandle)(innerRef, function() {
+    (0, import_react23.useImperativeHandle)(innerRef, function() {
       return formikbag;
     });
     if (true) {
-      (0, import_react25.useEffect)(function() {
+      (0, import_react23.useEffect)(function() {
         !!props.render ? true ? tiny_warning_esm_default(false, "<Formik render> has been deprecated and will be removed in future versions of Formik. Please use a child callback function instead. To get rid of this warning, replace <Formik render={(props) => ...} /> with <Formik>{(props) => ...}</Formik>") : tiny_warning_esm_default(false) : void 0;
       }, []);
     }
-    return (0, import_react25.createElement)(FormikProvider, {
+    return (0, import_react23.createElement)(FormikProvider, {
       value: formikbag
-    }, component ? (0, import_react25.createElement)(component, formikbag) : render ? render(formikbag) : children ? isFunction3(children) ? children(formikbag) : !isEmptyChildren(children) ? import_react25.Children.only(children) : null : null);
+    }, component ? (0, import_react23.createElement)(component, formikbag) : render ? render(formikbag) : children ? isFunction3(children) ? children(formikbag) : !isEmptyChildren(children) ? import_react23.Children.only(children) : null : null);
   }
   function warnAboutMissingIdentifier(_ref4) {
     var htmlContent = _ref4.htmlContent, documentationAnchorLink = _ref4.documentationAnchorLink, handlerName = _ref4.handlerName;
@@ -40534,13 +40954,13 @@ attempted value: ${formattedValue}
     }
     return currentArrayOfValues.slice(0, index).concat(currentArrayOfValues.slice(index + 1));
   }
-  var useIsomorphicLayoutEffect = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined" ? import_react25.useLayoutEffect : import_react25.useEffect;
+  var useIsomorphicLayoutEffect = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined" ? import_react23.useLayoutEffect : import_react23.useEffect;
   function useEventCallback(fn) {
-    var ref = (0, import_react25.useRef)(fn);
+    var ref = (0, import_react23.useRef)(fn);
     useIsomorphicLayoutEffect(function() {
       ref.current = fn;
     });
-    return (0, import_react25.useCallback)(function() {
+    return (0, import_react23.useCallback)(function() {
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
         args[_key] = arguments[_key];
       }
@@ -40551,7 +40971,7 @@ attempted value: ${formattedValue}
     var validate = _ref.validate, name = _ref.name, render = _ref.render, children = _ref.children, is2 = _ref.as, component = _ref.component, props = _objectWithoutPropertiesLoose3(_ref, ["validate", "name", "render", "children", "as", "component"]);
     var _useFormikContext = useFormikContext(), formik = _objectWithoutPropertiesLoose3(_useFormikContext, ["validate", "validationSchema"]);
     if (true) {
-      (0, import_react25.useEffect)(function() {
+      (0, import_react23.useEffect)(function() {
         !!render ? true ? tiny_warning_esm_default(false, '<Field render> has been deprecated and will be removed in future versions of Formik. Please use a child callback function instead. To get rid of this warning, replace <Field name="' + name + '" render={({field, form}) => ...} /> with <Field name="' + name + '">{({field, form, meta}) => ...}</Field>') : tiny_warning_esm_default(false) : void 0;
         !!(is2 && children && isFunction3(children)) ? true ? tiny_warning_esm_default(false, "You should not use <Field as> and <Field children> as a function in the same <Field> component; <Field as> will be ignored.") : tiny_warning_esm_default(false) : void 0;
         !!(component && children && isFunction3(children)) ? true ? tiny_warning_esm_default(false, "You should not use <Field component> and <Field children> as a function in the same <Field> component; <Field component> will be ignored.") : tiny_warning_esm_default(false) : void 0;
@@ -40559,7 +40979,7 @@ attempted value: ${formattedValue}
       }, []);
     }
     var registerField = formik.registerField, unregisterField = formik.unregisterField;
-    (0, import_react25.useEffect)(function() {
+    (0, import_react23.useEffect)(function() {
       registerField(name, {
         validate
       });
@@ -40588,11 +41008,11 @@ attempted value: ${formattedValue}
     if (component) {
       if (typeof component === "string") {
         var innerRef = props.innerRef, rest = _objectWithoutPropertiesLoose3(props, ["innerRef"]);
-        return (0, import_react25.createElement)(component, _extends5({
+        return (0, import_react23.createElement)(component, _extends5({
           ref: innerRef
         }, field, rest), children);
       }
-      return (0, import_react25.createElement)(component, _extends5({
+      return (0, import_react23.createElement)(component, _extends5({
         field,
         form: formik
       }, props), children);
@@ -40600,17 +41020,17 @@ attempted value: ${formattedValue}
     var asElement = is2 || "input";
     if (typeof asElement === "string") {
       var _innerRef = props.innerRef, _rest = _objectWithoutPropertiesLoose3(props, ["innerRef"]);
-      return (0, import_react25.createElement)(asElement, _extends5({
+      return (0, import_react23.createElement)(asElement, _extends5({
         ref: _innerRef
       }, field, _rest), children);
     }
-    return (0, import_react25.createElement)(asElement, _extends5({}, field, props), children);
+    return (0, import_react23.createElement)(asElement, _extends5({}, field, props), children);
   }
-  var Form2 = /* @__PURE__ */ (0, import_react25.forwardRef)(function(props, ref) {
+  var Form2 = /* @__PURE__ */ (0, import_react23.forwardRef)(function(props, ref) {
     var action = props.action, rest = _objectWithoutPropertiesLoose3(props, ["action"]);
     var _action = action != null ? action : "#";
     var _useFormikContext = useFormikContext(), handleReset = _useFormikContext.handleReset, handleSubmit = _useFormikContext.handleSubmit;
-    return (0, import_react25.createElement)("form", Object.assign({
+    return (0, import_react23.createElement)("form", Object.assign({
       onSubmit: handleSubmit,
       ref,
       onReset: handleReset,
@@ -40620,9 +41040,9 @@ attempted value: ${formattedValue}
   Form2.displayName = "Form";
   function connect(Comp) {
     var C = function C2(props) {
-      return (0, import_react25.createElement)(FormikConsumer, null, function(formik) {
+      return (0, import_react23.createElement)(FormikConsumer, null, function(formik) {
         !!!formik ? true ? tiny_warning_esm_default(false, "Formik context is undefined, please verify you are rendering <Form>, <Field>, <FastField>, <FieldArray>, or your custom context-using component as a child of a <Formik> component. Component name: " + Comp.name) : tiny_warning_esm_default(false) : void 0;
-        return (0, import_react25.createElement)(Comp, Object.assign({}, props, {
+        return (0, import_react23.createElement)(Comp, Object.assign({}, props, {
           formik
         }));
       });
@@ -40863,10 +41283,10 @@ attempted value: ${formattedValue}
         form: restOfFormik,
         name
       });
-      return component ? (0, import_react25.createElement)(component, props) : render2 ? render2(props) : children ? typeof children === "function" ? children(props) : !isEmptyChildren(children) ? import_react25.Children.only(children) : null : null;
+      return component ? (0, import_react23.createElement)(component, props) : render2 ? render2(props) : children ? typeof children === "function" ? children(props) : !isEmptyChildren(children) ? import_react23.Children.only(children) : null : null;
     };
     return FieldArrayInner2;
-  }(import_react25.Component);
+  }(import_react23.Component);
   FieldArrayInner.defaultProps = {
     validateOnChange: true
   };
@@ -40887,35 +41307,103 @@ attempted value: ${formattedValue}
       var _this$props = this.props, component = _this$props.component, formik = _this$props.formik, render2 = _this$props.render, children = _this$props.children, name = _this$props.name, rest = _objectWithoutPropertiesLoose3(_this$props, ["component", "formik", "render", "children", "name"]);
       var touch = getIn2(formik.touched, name);
       var error = getIn2(formik.errors, name);
-      return !!touch && !!error ? render2 ? isFunction3(render2) ? render2(error) : null : children ? isFunction3(children) ? children(error) : null : component ? (0, import_react25.createElement)(component, rest, error) : error : null;
+      return !!touch && !!error ? render2 ? isFunction3(render2) ? render2(error) : null : children ? isFunction3(children) ? children(error) : null : component ? (0, import_react23.createElement)(component, rest, error) : error : null;
     };
     return ErrorMessageImpl2;
-  }(import_react25.Component);
+  }(import_react23.Component);
   var ErrorMessage = /* @__PURE__ */ connect(ErrorMessageImpl);
+
+  // src/services/UserService.js
+  var buildHeaders = (token2) => {
+    return {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token2}`
+    };
+  };
+  var register = async (user) => {
+    return await axios_default.post(`${API_BASE_URL}/auth/register`, user);
+  };
+  var login = async (user) => {
+    return await axios_default.post(`${API_BASE_URL}/auth/login`, user);
+  };
+  var getUserId = async () => {
+    return await axios_default.get(`${API_BASE_URL}/auth/id`);
+  };
+  var getUserById = async (id, token2) => {
+    return await axios_default.get(`${API_BASE_URL}/user/${id}`, {
+      headers: buildHeaders(token2)
+    });
+  };
+  var updateUser = async (id, user, token2) => {
+    return await axios_default.put(`${API_BASE_URL}/user/${id}`, user, {
+      headers: buildHeaders(token2)
+    });
+  };
+  var createSession = (token2, user) => {
+    localStorage.setItem("token", token2);
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+  var destroySession = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  };
+  var getToken = () => {
+    let token2 = localStorage.getItem("token");
+    if (token2) {
+      return token2;
+    } else {
+      return false;
+    }
+  };
+  var getCurrentUser = () => {
+    let user = localStorage.getItem("user");
+    if (user) {
+      return JSON.parse(user);
+    } else {
+      return false;
+    }
+  };
+
+  // src/context/UserContext.js
+  var import_react24 = __toESM(require_react(), 1);
+  var UserContext = (0, import_react24.createContext)();
+  var UserContextProvider = ({ children }) => {
+    const [isUserLoggedIn, setIsUserLoggedIn] = (0, import_react24.useState)(false);
+    return /* @__PURE__ */ import_react24.default.createElement(
+      UserContext.Provider,
+      {
+        value: {
+          isUserLoggedIn,
+          setIsUserLoggedIn
+        }
+      },
+      children
+    );
+  };
 
   // src/pages/LoginForm.js
   var LoginForm = () => {
-    const [showPassword, setShowPassword] = (0, import_react26.useState)(false);
-    const navigate = useNavigate();
-    const { setIsUserLoggedIn, setUserData } = (0, import_react26.useContext)(UserContext);
+    const [showPassword, setShowPassword] = (0, import_react25.useState)(false);
+    const navigate2 = useNavigate();
+    const { setIsUserLoggedIn } = (0, import_react25.useContext)(UserContext);
     const initVal = {
       username: "",
       password: ""
     };
     const handleSubmit = async (values2, { resetForm }) => {
-      login(values2).then((response) => {
-        getUserId().then((resp) => {
-          getUserById(resp.data, response.data.token).then((res) => {
-            setIsUserLoggedIn(true);
-            navigate("/home");
-            let data = {
-              id: res.data.id,
-              token: response.data.token,
-              firstName: res.data.firstName,
-              lastName: res.data.lastName
+      login(values2).then((res1) => {
+        getUserId().then((res2) => {
+          getUserById(res2.data, res1.data.token).then((res3) => {
+            let user = {
+              id: res3.data.id,
+              firstName: res3.data.firstName,
+              lastName: res3.data.lastName,
+              username: res3.data.username,
+              password: res3.data.password
             };
-            setUserData(data);
-            localStorage.setItem("user", JSON.stringify(data));
+            createSession(res1.data.token, user);
+            setIsUserLoggedIn(true);
+            navigate2("/home");
           }).catch((err) => {
             console.log(err);
           });
@@ -40931,7 +41419,7 @@ attempted value: ${formattedValue}
       username: create$6().required("Username is required!"),
       password: create$6().required("Password is required!")
     });
-    return /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "container" }, /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "custom-shape-divider-top" }, /* @__PURE__ */ import_react26.default.createElement(
+    return /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "container" }, /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "custom-shape-divider-top" }, /* @__PURE__ */ import_react25.default.createElement(
       "svg",
       {
         "data-name": "Layer 1",
@@ -40939,7 +41427,7 @@ attempted value: ${formattedValue}
         viewBox: "0 0 1200 120",
         preserveAspectRatio: "none"
       },
-      /* @__PURE__ */ import_react26.default.createElement(
+      /* @__PURE__ */ import_react25.default.createElement(
         "path",
         {
           d: "M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z",
@@ -40947,7 +41435,7 @@ attempted value: ${formattedValue}
           className: "shape-fill"
         }
       ),
-      /* @__PURE__ */ import_react26.default.createElement(
+      /* @__PURE__ */ import_react25.default.createElement(
         "path",
         {
           d: "M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z",
@@ -40955,34 +41443,34 @@ attempted value: ${formattedValue}
           className: "shape-fill"
         }
       ),
-      /* @__PURE__ */ import_react26.default.createElement(
+      /* @__PURE__ */ import_react25.default.createElement(
         "path",
         {
           d: "M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z",
           className: "shape-fill"
         }
       )
-    )), /* @__PURE__ */ import_react26.default.createElement(Paper_default, { elevation: 5, sx: { m: 2 } }, /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "login-container" }, /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "left-login" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "h4", className: "login-title" }, "Sign in"), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "login-icon" }, /* @__PURE__ */ import_react26.default.createElement(SlLock, null)), /* @__PURE__ */ import_react26.default.createElement(
+    )), /* @__PURE__ */ import_react25.default.createElement(Paper_default, { elevation: 5, sx: { m: 2 } }, /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "login-container" }, /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "left-login" }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, { variant: "h4", className: "login-title" }, "Sign in"), /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "login-icon" }, /* @__PURE__ */ import_react25.default.createElement(SlLock, null)), /* @__PURE__ */ import_react25.default.createElement(
       Formik,
       {
         initialValues: initVal,
         validationSchema: signInSchema,
         onSubmit: handleSubmit
       },
-      /* @__PURE__ */ import_react26.default.createElement(Form2, { className: "form" }, /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2" }, "Username"), /* @__PURE__ */ import_react26.default.createElement(Field, { className: "login-input", name: "username", type: "text" }), /* @__PURE__ */ import_react26.default.createElement(ErrorMessage, { name: "username" }, (msg) => /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "subtitle2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2" }, "Password"), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "password-container" }, /* @__PURE__ */ import_react26.default.createElement(
+      /* @__PURE__ */ import_react25.default.createElement(Form2, { className: "form" }, /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, { variant: "body2" }, "Username"), /* @__PURE__ */ import_react25.default.createElement(Field, { className: "login-input", name: "username", type: "text" }), /* @__PURE__ */ import_react25.default.createElement(ErrorMessage, { name: "username" }, (msg) => /* @__PURE__ */ import_react25.default.createElement(Typography_default, { variant: "subtitle2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, { variant: "body2" }, "Password"), /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "password-container" }, /* @__PURE__ */ import_react25.default.createElement(
         Field,
         {
           className: "login-input",
           name: "password",
           type: showPassword ? "text" : "password"
         }
-      ), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "password-icons" }, showPassword ? /* @__PURE__ */ import_react26.default.createElement(FiEye, { onClick: () => setShowPassword(false) }) : /* @__PURE__ */ import_react26.default.createElement(FiEyeOff, { onClick: () => setShowPassword(true) }))), /* @__PURE__ */ import_react26.default.createElement(ErrorMessage, { name: "password" }, (msg) => /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "subtitle2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react26.default.createElement("span", null, "Forgot Password?"), /* @__PURE__ */ import_react26.default.createElement("button", { type: "submit", className: "login-btn" }, "Sign In"))
-    )), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "right-login" }, /* @__PURE__ */ import_react26.default.createElement(Box_default, null, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "h4", sx: { mb: 2 } }, "Join us!"), /* @__PURE__ */ import_react26.default.createElement(Typography_default, { sx: { mb: 2 } }, "Have a lot of free time? Discover amazing shows with us."), /* @__PURE__ */ import_react26.default.createElement(
+      ), /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "password-icons" }, showPassword ? /* @__PURE__ */ import_react25.default.createElement(FiEye, { onClick: () => setShowPassword(false) }) : /* @__PURE__ */ import_react25.default.createElement(FiEyeOff, { onClick: () => setShowPassword(true) }))), /* @__PURE__ */ import_react25.default.createElement(ErrorMessage, { name: "password" }, (msg) => /* @__PURE__ */ import_react25.default.createElement(Typography_default, { variant: "subtitle2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react25.default.createElement("span", null, "Forgot Password?"), /* @__PURE__ */ import_react25.default.createElement("button", { type: "submit", className: "login-btn" }, "Sign In"))
+    )), /* @__PURE__ */ import_react25.default.createElement(Box_default, { className: "right-login" }, /* @__PURE__ */ import_react25.default.createElement(Box_default, null, /* @__PURE__ */ import_react25.default.createElement(Typography_default, { variant: "h4", sx: { mb: 2 } }, "Join us!"), /* @__PURE__ */ import_react25.default.createElement(Typography_default, { sx: { mb: 2 } }, "Have a lot of free time? Discover amazing shows with us."), /* @__PURE__ */ import_react25.default.createElement(
       "button",
       {
         type: "submit",
         className: "sign-up-btn",
-        onClick: () => navigate("/signup")
+        onClick: () => navigate2("/signup")
       },
       "Sign Up"
     ))))));
@@ -40990,20 +41478,19 @@ attempted value: ${formattedValue}
   var LoginForm_default = LoginForm;
 
   // src/pages/SignUpForm.js
-  var import_react27 = __toESM(require_react(), 1);
+  var import_react26 = __toESM(require_react(), 1);
   var SignUpForm = () => {
-    const [showPassword, setShowPassword] = (0, import_react27.useState)(false);
-    const [showConfirmPassword, setShowConfirmPassword] = (0, import_react27.useState)(false);
-    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = (0, import_react26.useState)(false);
+    const [showConfirmPassword, setShowConfirmPassword] = (0, import_react26.useState)(false);
+    const navigate2 = useNavigate();
     const handleSubmit = (values2, { resetForm }) => {
       register(values2).then((res) => console.log("User registered successfully!")).catch((err) => console.log(err));
-      navigate("/login");
+      navigate2("/login");
       resetForm({ values: "" });
     };
     let initVal = {
       firstName: "",
       lastName: "",
-      email: "",
       username: "",
       password: "",
       confirmPassword: ""
@@ -41011,12 +41498,11 @@ attempted value: ${formattedValue}
     const signUpSchema = create$3().shape({
       firstName: create$6().min(2, "Must have atleast 2 characters!").max(60, "First name is too long!").required("First name is required!"),
       lastName: create$6().min(2, "Must have atleast 2 characters!").max(60, "Last name is too long!").required("Last name is required!"),
-      email: create$6().email("Invalid email!").required("Email is required!"),
       username: create$6().min(6, "Username is too short").max(60, "Username is too long!").required("Username is required!"),
       password: create$6().min(6, "Must be atleast 6 characters!").max(60, "Cannot exceed 60 characters!").required("Password is required!"),
       confirmPassword: create$6().oneOf([create$9("password"), null], "Password does not match!").required("Confirm Password is required!")
     });
-    return /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "container signup-container" }, /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "custom-shape-divider-top" }, /* @__PURE__ */ import_react27.default.createElement(
+    return /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "container signup-container" }, /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "custom-shape-divider-top" }, /* @__PURE__ */ import_react26.default.createElement(
       "svg",
       {
         "data-name": "Layer 1",
@@ -41024,7 +41510,7 @@ attempted value: ${formattedValue}
         viewBox: "0 0 1200 120",
         preserveAspectRatio: "none"
       },
-      /* @__PURE__ */ import_react27.default.createElement(
+      /* @__PURE__ */ import_react26.default.createElement(
         "path",
         {
           d: "M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z",
@@ -41032,7 +41518,7 @@ attempted value: ${formattedValue}
           className: "shape-fill"
         }
       ),
-      /* @__PURE__ */ import_react27.default.createElement(
+      /* @__PURE__ */ import_react26.default.createElement(
         "path",
         {
           d: "M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z",
@@ -41040,50 +41526,65 @@ attempted value: ${formattedValue}
           className: "shape-fill"
         }
       ),
-      /* @__PURE__ */ import_react27.default.createElement(
+      /* @__PURE__ */ import_react26.default.createElement(
         "path",
         {
           d: "M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z",
           className: "shape-fill"
         }
       )
-    )), /* @__PURE__ */ import_react27.default.createElement(Paper_default, { elevation: 5 }, /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "sign-up-container" }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "h5", sx: { mb: 2 } }, "Sign Up"), /* @__PURE__ */ import_react27.default.createElement(Box_default, null, /* @__PURE__ */ import_react27.default.createElement(
+    )), /* @__PURE__ */ import_react26.default.createElement(Paper_default, { elevation: 5 }, /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "sign-up-container" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "h5", sx: { mb: 2 } }, "Sign Up"), /* @__PURE__ */ import_react26.default.createElement(Box_default, null, /* @__PURE__ */ import_react26.default.createElement(
       Formik,
       {
         initialValues: initVal,
         validationSchema: signUpSchema,
         onSubmit: handleSubmit
       },
-      /* @__PURE__ */ import_react27.default.createElement(Form2, null, /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2" }, "First Name"), /* @__PURE__ */ import_react27.default.createElement(Field, { className: "login-input", name: "firstName", type: "text" }), /* @__PURE__ */ import_react27.default.createElement(ErrorMessage, { name: "firstName" }, (msg) => /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2" }, "Last Name"), /* @__PURE__ */ import_react27.default.createElement(Field, { className: "login-input", name: "lastName", type: "text" }), /* @__PURE__ */ import_react27.default.createElement(ErrorMessage, { name: "lastName" }, (msg) => /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2" }, "Email"), /* @__PURE__ */ import_react27.default.createElement(Field, { className: "login-input", name: "email", type: "text" }), /* @__PURE__ */ import_react27.default.createElement(ErrorMessage, { name: "email" }, (msg) => /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2" }, "Username"), /* @__PURE__ */ import_react27.default.createElement(Field, { className: "login-input", name: "username", type: "text" }), /* @__PURE__ */ import_react27.default.createElement(ErrorMessage, { name: "username" }, (msg) => /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2" }, "Password"), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "password-container" }, /* @__PURE__ */ import_react27.default.createElement(
+      /* @__PURE__ */ import_react26.default.createElement(Form2, null, /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2" }, "First Name"), /* @__PURE__ */ import_react26.default.createElement(Field, { className: "login-input", name: "firstName", type: "text" }), /* @__PURE__ */ import_react26.default.createElement(ErrorMessage, { name: "firstName" }, (msg) => /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2" }, "Last Name"), /* @__PURE__ */ import_react26.default.createElement(Field, { className: "login-input", name: "lastName", type: "text" }), /* @__PURE__ */ import_react26.default.createElement(ErrorMessage, { name: "lastName" }, (msg) => /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2" }, "Username"), /* @__PURE__ */ import_react26.default.createElement(Field, { className: "login-input", name: "username", type: "text" }), /* @__PURE__ */ import_react26.default.createElement(ErrorMessage, { name: "username" }, (msg) => /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2" }, "Password"), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "password-container" }, /* @__PURE__ */ import_react26.default.createElement(
         Field,
         {
           className: "login-input",
           name: "password",
           type: showPassword ? "text" : "password"
         }
-      ), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "password-icons" }, showPassword ? /* @__PURE__ */ import_react27.default.createElement(FiEye, { onClick: () => setShowPassword(false) }) : /* @__PURE__ */ import_react27.default.createElement(FiEyeOff, { onClick: () => setShowPassword(true) })), /* @__PURE__ */ import_react27.default.createElement(ErrorMessage, { name: "password" }, (msg) => /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg)))), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2" }, "Confirm Password"), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "password-container" }, /* @__PURE__ */ import_react27.default.createElement(
+      ), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "password-icons" }, showPassword ? /* @__PURE__ */ import_react26.default.createElement(FiEye, { onClick: () => setShowPassword(false) }) : /* @__PURE__ */ import_react26.default.createElement(FiEyeOff, { onClick: () => setShowPassword(true) }))), /* @__PURE__ */ import_react26.default.createElement(ErrorMessage, { name: "password" }, (msg) => /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2" }, "Confirm Password"), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "password-container" }, /* @__PURE__ */ import_react26.default.createElement(
         Field,
         {
           className: "login-input",
           name: "confirmPassword",
           type: showConfirmPassword ? "text" : "password"
         }
-      ), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "password-icons" }, showConfirmPassword ? /* @__PURE__ */ import_react27.default.createElement(FiEye, { onClick: () => setShowConfirmPassword(false) }) : /* @__PURE__ */ import_react27.default.createElement(
+      ), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "password-icons" }, showConfirmPassword ? /* @__PURE__ */ import_react26.default.createElement(FiEye, { onClick: () => setShowConfirmPassword(false) }) : /* @__PURE__ */ import_react26.default.createElement(
         FiEyeOff,
         {
           onClick: () => setShowConfirmPassword(true)
         }
-      )), /* @__PURE__ */ import_react27.default.createElement(ErrorMessage, { name: "confirmPassword" }, (msg) => /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg)))), /* @__PURE__ */ import_react27.default.createElement("button", { type: "submit", className: "register-btn" }, "Register"))
-    )), /* @__PURE__ */ import_react27.default.createElement(Box_default, { className: "already" }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, { variant: "body2" }, "Already have an account?"), /* @__PURE__ */ import_react27.default.createElement("span", { onClick: () => navigate("/login") }, "Sign In")))));
+      ))), /* @__PURE__ */ import_react26.default.createElement(ErrorMessage, { name: "confirmPassword" }, (msg) => /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react26.default.createElement("button", { type: "submit", className: "register-btn" }, "Register"))
+    )), /* @__PURE__ */ import_react26.default.createElement(Box_default, { className: "already" }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, { variant: "body2" }, "Already have an account?"), /* @__PURE__ */ import_react26.default.createElement("span", { onClick: () => navigate2("/login") }, "Sign In")))));
   };
   var SignUpForm_default = SignUpForm;
 
   // src/pages/SearchResults.js
-  var import_react28 = __toESM(require_react(), 1);
+  var import_react27 = __toESM(require_react(), 1);
   var SearchResults = () => {
-    const { searchResults } = (0, import_react28.useContext)(APIContext);
-    const { search } = (0, import_react28.useContext)(AppbarContext);
-    return /* @__PURE__ */ import_react28.default.createElement(Container_default, null, /* @__PURE__ */ import_react28.default.createElement(
+    const [loading, setLoading] = (0, import_react27.useState)(false);
+    const { search } = (0, import_react27.useContext)(AppbarContext);
+    const { searchResults, setSearchResults } = (0, import_react27.useContext)(SearchContext);
+    (0, import_react27.useEffect)(() => {
+      getSearchResults(search).then((res) => setSearchResults(res.data.results)).catch((err) => console.log(err));
+      setTimeout(() => {
+        setLoading(true);
+      }, 1e3);
+    }, []);
+    return /* @__PURE__ */ import_react27.default.createElement(import_react27.default.Fragment, null, /* @__PURE__ */ import_react27.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react27.default.createElement(Container_default, null, !loading ? /* @__PURE__ */ import_react27.default.createElement(
+      Skeleton_default,
+      {
+        animation: "wave",
+        width: "20%",
+        sx: { mt: 10, mb: 3, height: 60 }
+      },
+      /* @__PURE__ */ import_react27.default.createElement(Typography_default, null, ".")
+    ) : /* @__PURE__ */ import_react27.default.createElement(
       Typography_default,
       {
         variant: "h5",
@@ -41097,25 +41598,84 @@ attempted value: ${formattedValue}
       },
       "Searched: ",
       search
-    ), /* @__PURE__ */ import_react28.default.createElement("div", { className: "card-container" }, searchResults.map(
-      (show) => show.backdrop_path != null && /* @__PURE__ */ import_react28.default.createElement(
+    ), /* @__PURE__ */ import_react27.default.createElement("div", { className: "card-container" }, !loading ? searchResults.map((show) => /* @__PURE__ */ import_react27.default.createElement(Box_default, { key: show.id }, /* @__PURE__ */ import_react27.default.createElement(
+      Skeleton_default,
+      {
+        variant: "rectangular",
+        animation: "wave",
+        sx: { height: 270, width: 208, borderRadius: 2 }
+      }
+    ), /* @__PURE__ */ import_react27.default.createElement(Skeleton_default, { width: "100%", sx: { height: 35 } }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, null, ".")))) : searchResults.map(
+      (show) => show.backdrop_path != null && /* @__PURE__ */ import_react27.default.createElement(
         Card_default,
         {
           key: show.id,
           id: show.id,
           poster: `${POSTER_IMG}${show.poster_path}` || `${POSTER_IMG}${show.backdrop_path}`,
-          title: show.title || show.name
+          title: show.title || show.name,
+          type: show.media_type
         }
       )
-    )));
+    ))), /* @__PURE__ */ import_react27.default.createElement(Footer_default, null));
   };
   var SearchResults_default = SearchResults;
 
   // src/pages/MyList.js
-  var import_react29 = __toESM(require_react(), 1);
+  var import_react28 = __toESM(require_react(), 1);
+
+  // src/services/UserListService.js
+  var getUserListById = async (id, token2) => {
+    return await axios_default.get(`${API_BASE_URL}/userlist/${id}`, {
+      headers: buildHeaders(token2)
+    });
+  };
+  var getShowByShowId = async (id, token2) => {
+    return await axios_default.get(`${API_BASE_URL}/userlist/show/${id}`, {
+      headers: buildHeaders(token2)
+    });
+  };
+  var addUserList = async (id, userList, token2) => {
+    return await axios_default.post(`${API_BASE_URL}/userlist/${id}`, userList, {
+      headers: buildHeaders(token2)
+    });
+  };
+  var removeUserList = async (id, token2) => {
+    return await axios_default.delete(`${API_BASE_URL}/userlist/${id}`, {
+      headers: buildHeaders(token2)
+    });
+  };
+
+  // src/pages/MyList.js
   var MyList = () => {
-    const { userList } = (0, import_react29.useContext)(UserListContext);
-    return /* @__PURE__ */ import_react29.default.createElement(Container_default, null, /* @__PURE__ */ import_react29.default.createElement(
+    const [userList, setUserList] = (0, import_react28.useState)([]);
+    const [loading, setLoading] = (0, import_react28.useState)(false);
+    const { setIsUserLoggedIn } = (0, import_react28.useContext)(UserContext);
+    let token2 = getToken();
+    let user = getCurrentUser();
+    const handleError = () => {
+      destroySession();
+      setIsUserLoggedIn(false);
+      navigate("/login");
+    };
+    (0, import_react28.useEffect)(() => {
+      if (token2 && user) {
+        getUserListById(user.id, token2).then((res) => setUserList(res.data)).catch((err) => handleError());
+      } else {
+        handleError();
+      }
+      setTimeout(() => {
+        setLoading(true);
+      }, 1e3);
+    }, []);
+    return /* @__PURE__ */ import_react28.default.createElement(import_react28.default.Fragment, null, /* @__PURE__ */ import_react28.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react28.default.createElement(Container_default, null, !loading ? /* @__PURE__ */ import_react28.default.createElement(
+      Skeleton_default,
+      {
+        animation: "wave",
+        width: "15%",
+        sx: { mt: 10, mb: 3, height: 60 }
+      },
+      /* @__PURE__ */ import_react28.default.createElement(Typography_default, null, ".")
+    ) : /* @__PURE__ */ import_react28.default.createElement(
       Typography_default,
       {
         variant: "h5",
@@ -41128,20 +41688,28 @@ attempted value: ${formattedValue}
         }
       },
       "FAVORITES"
-    ), /* @__PURE__ */ import_react29.default.createElement("div", { className: "card-container" }, userList.map((show) => /* @__PURE__ */ import_react29.default.createElement(
+    ), /* @__PURE__ */ import_react28.default.createElement("div", { className: "card-container" }, !loading ? userList.map((show) => /* @__PURE__ */ import_react28.default.createElement(Box_default, { key: show.id }, /* @__PURE__ */ import_react28.default.createElement(
+      Skeleton_default,
+      {
+        variant: "rectangular",
+        animation: "wave",
+        sx: { height: 270, width: 208, borderRadius: 2 }
+      }
+    ), /* @__PURE__ */ import_react28.default.createElement(Skeleton_default, { width: "100%", sx: { height: 35 } }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, null, ".")))) : userList.map((show) => /* @__PURE__ */ import_react28.default.createElement(
       Card_default,
       {
         key: show.showId,
         id: show.showId,
         poster: `${POSTER_IMG}${show.poster}`,
-        title: show.title
+        title: show.title,
+        type: show.type
       }
-    ))));
+    )))), /* @__PURE__ */ import_react28.default.createElement(Footer_default, null));
   };
   var MyList_default = MyList;
 
   // src/pages/Landing.js
-  var import_react30 = __toESM(require_react(), 1);
+  var import_react29 = __toESM(require_react(), 1);
 
   // node_modules/react-icons/fa/index.esm.js
   function FaCalendarCheck(props) {
@@ -41159,33 +41727,298 @@ attempted value: ${formattedValue}
 
   // src/pages/Landing.js
   var Landing = () => {
-    const navigate = useNavigate();
-    return /* @__PURE__ */ import_react30.default.createElement(import_react30.default.Fragment, null, /* @__PURE__ */ import_react30.default.createElement(AppBar_default, { position: "static", elevation: 0 }, /* @__PURE__ */ import_react30.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react30.default.createElement(Container_default, null, /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "nav" }, /* @__PURE__ */ import_react30.default.createElement("img", { src: logo_default, className: "logo" }), /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "landing-right-nav" }, /* @__PURE__ */ import_react30.default.createElement("div", { onClick: () => navigate("/signup") }, "Sign Up"), /* @__PURE__ */ import_react30.default.createElement("div", null, "|"), /* @__PURE__ */ import_react30.default.createElement("div", { onClick: () => navigate("/login") }, "Login")))))), /* @__PURE__ */ import_react30.default.createElement("section", { className: "colored-section" }, /* @__PURE__ */ import_react30.default.createElement(Container_default, null, /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "hero-container" }, /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "hero-content" }, /* @__PURE__ */ import_react30.default.createElement("h2", null, "Find your next favorite flick with just a click!")), /* @__PURE__ */ import_react30.default.createElement("img", { src: landing_img_default, alt: "Hero Image", className: "landing-img" })))), /* @__PURE__ */ import_react30.default.createElement("section", { className: "featured" }, /* @__PURE__ */ import_react30.default.createElement(Container_default, null, /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "featured-container" }, /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "featured-content" }, /* @__PURE__ */ import_react30.default.createElement(FaSearch, { className: "featured-icon" }), /* @__PURE__ */ import_react30.default.createElement(Typography_default, { className: "featured-text", variant: "h4" }, "Discover"), /* @__PURE__ */ import_react30.default.createElement(Typography_default, { style: { color: "#8f8f8f" } }, "Discover your next favorite show with our website's vast collection.")), /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "featured-content" }, /* @__PURE__ */ import_react30.default.createElement(FaCalendarCheck, { className: "featured-icon" }), /* @__PURE__ */ import_react30.default.createElement(Typography_default, { className: "featured-text", variant: "h4" }, "Updated"), /* @__PURE__ */ import_react30.default.createElement(Typography_default, { style: { color: "#8f8f8f" } }, "Get the latest blockbuster hits and timeless classics, always up-to-date.")), /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "featured-content" }, /* @__PURE__ */ import_react30.default.createElement(FaListAlt, { className: "featured-icon" }), /* @__PURE__ */ import_react30.default.createElement(Typography_default, { className: "featured-text", variant: "h4" }, "Favorites"), /* @__PURE__ */ import_react30.default.createElement(Box_default, null, /* @__PURE__ */ import_react30.default.createElement(Typography_default, { style: { color: "#8f8f8f" } }, "Never miss a movie again - easily keep tabs on all your favorite films by adding them to your list")))))));
+    const navigate2 = useNavigate();
+    return /* @__PURE__ */ import_react29.default.createElement(import_react29.default.Fragment, null, /* @__PURE__ */ import_react29.default.createElement(AppBar_default, { position: "static", elevation: 0 }, /* @__PURE__ */ import_react29.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react29.default.createElement(Container_default, null, /* @__PURE__ */ import_react29.default.createElement(Box_default, { className: "nav" }, /* @__PURE__ */ import_react29.default.createElement("img", { src: logo_default, className: "logo" }), /* @__PURE__ */ import_react29.default.createElement(Box_default, { className: "landing-right-nav" }, /* @__PURE__ */ import_react29.default.createElement("div", { onClick: () => navigate2("/signup") }, "Sign Up"), /* @__PURE__ */ import_react29.default.createElement("div", null, "|"), /* @__PURE__ */ import_react29.default.createElement("div", { onClick: () => navigate2("/login") }, "Login")))))), /* @__PURE__ */ import_react29.default.createElement("section", { className: "colored-section" }, /* @__PURE__ */ import_react29.default.createElement(Container_default, null, /* @__PURE__ */ import_react29.default.createElement(Box_default, { className: "hero-container" }, /* @__PURE__ */ import_react29.default.createElement(Box_default, { className: "hero-content" }, /* @__PURE__ */ import_react29.default.createElement("h2", null, "Find your next favorite flick with just a click!")), /* @__PURE__ */ import_react29.default.createElement("img", { src: landing_img_default, alt: "Hero Image", className: "landing-img" })))), /* @__PURE__ */ import_react29.default.createElement("section", { className: "featured" }, /* @__PURE__ */ import_react29.default.createElement(Container_default, null, /* @__PURE__ */ import_react29.default.createElement(Box_default, { className: "featured-container" }, /* @__PURE__ */ import_react29.default.createElement(Box_default, { className: "featured-content" }, /* @__PURE__ */ import_react29.default.createElement(FaSearch, { className: "featured-icon" }), /* @__PURE__ */ import_react29.default.createElement(Typography_default, { className: "featured-text", variant: "h4" }, "Discover"), /* @__PURE__ */ import_react29.default.createElement(Typography_default, { style: { color: "#8f8f8f" } }, "Discover your next favorite show with our website's vast collection.")), /* @__PURE__ */ import_react29.default.createElement(Box_default, { className: "featured-content" }, /* @__PURE__ */ import_react29.default.createElement(FaCalendarCheck, { className: "featured-icon" }), /* @__PURE__ */ import_react29.default.createElement(Typography_default, { className: "featured-text", variant: "h4" }, "Updated"), /* @__PURE__ */ import_react29.default.createElement(Typography_default, { style: { color: "#8f8f8f" } }, "Get the latest blockbuster hits and timeless classics, always up-to-date.")), /* @__PURE__ */ import_react29.default.createElement(Box_default, { className: "featured-content" }, /* @__PURE__ */ import_react29.default.createElement(FaListAlt, { className: "featured-icon" }), /* @__PURE__ */ import_react29.default.createElement(Typography_default, { className: "featured-text", variant: "h4" }, "Favorites"), /* @__PURE__ */ import_react29.default.createElement(Box_default, null, /* @__PURE__ */ import_react29.default.createElement(Typography_default, { style: { color: "#8f8f8f" } }, "Never miss a movie again - easily keep tabs on all your favorite films by adding them to your list")))))));
   };
   var Landing_default = Landing;
 
+  // src/pages/Profile.js
+  var import_react30 = __toESM(require_react(), 1);
+
+  // public/assets/images/user.png
+  var user_default = "data:image/png;base64,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";
+
+  // src/pages/Profile.js
+  var Profile = () => {
+    const [edit, setEdit] = (0, import_react30.useState)(false);
+    const { setIsUserLoggedIn } = (0, import_react30.useContext)(UserContext);
+    const navigate2 = useNavigate();
+    let token2 = getToken();
+    let user = getCurrentUser();
+    let initVal = {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      password: user.password.substring(0, 10),
+      confirmPassword: user.password.substring(0, 10)
+    };
+    const handleError = () => {
+      destroySession();
+      setIsUserLoggedIn(false);
+      navigate2("/login");
+    };
+    const update = (values2, { resetForm }) => {
+      if (token2 && user) {
+        if (user.firstName != values2.firstName || user.lastName != values2.lastName || user.password.substring(0, 10) != values2.password) {
+          let payload = {};
+          if (user.firstName != values2.firstName && user.lastName != values2.lastName && user.password.substring(0, 10) != values2.password) {
+            payload = {
+              firstName: values2.firstName,
+              lastName: values2.lastName,
+              password: values2.password
+            };
+          } else if (user.firstName != values2.firstName && user.lastName != values2.lastName) {
+            payload = { firstName: values2.firstName, lastName: values2.lastName };
+          } else if (user.firstName != values2.firstName && user.password.substring(0, 10) != values2.password) {
+            payload = { firstName: values2.firstName, password: values2.password };
+          } else if (user.lastName != values2.lastName && user.password.substring(0, 10) != values2.password) {
+            payload = { lastName: values2.lastName, password: values2.password };
+          } else if (user.firstName != values2.firstName) {
+            payload = { firstName: values2.firstName };
+          } else if (user.lastName != values2.lastName) {
+            payload = { lastName: values2.lastName };
+          } else if (user.password.substring(0, 10) != values2.password) {
+            payload = { password: values2.password };
+          }
+          updateUser(user.id, payload, token2).then((res) => {
+            getUserById(user.id, token2).then((res1) => {
+              let user1 = {
+                id: res1.data.id,
+                firstName: res1.data.firstName,
+                lastName: res1.data.lastName,
+                username: res1.data.username,
+                password: res1.data.password
+              };
+              console.log(user1);
+              localStorage.setItem("user", JSON.stringify(user1));
+              window.location.reload();
+            }).catch((err) => handleError());
+          }).catch((err) => handleError());
+        }
+      } else {
+        handleError();
+      }
+      resetForm({ values: "" });
+    };
+    const updateSchema = create$3().shape({
+      firstName: create$6().min(2, "Must have atleast 2 characters!").max(60, "First name is too long!").required("First name is required!"),
+      lastName: create$6().min(2, "Must have atleast 2 characters!").max(60, "Last name is too long!").required("Last name is required!"),
+      password: create$6().min(6, "Must be atleast 6 characters!").max(60, "Cannot exceed 60 characters!").required("Password is required!"),
+      confirmPassword: create$6().oneOf([create$9("password"), null], "Password does not match!").required("Confirm Password is required!")
+    });
+    return /* @__PURE__ */ import_react30.default.createElement(import_react30.default.Fragment, null, /* @__PURE__ */ import_react30.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react30.default.createElement(Container_default, null, /* @__PURE__ */ import_react30.default.createElement("div", { className: "profile-container" }, /* @__PURE__ */ import_react30.default.createElement("div", { className: "left-profile-container" }, /* @__PURE__ */ import_react30.default.createElement(Paper_default, null, /* @__PURE__ */ import_react30.default.createElement("div", null, /* @__PURE__ */ import_react30.default.createElement(
+      "img",
+      {
+        className: "profile-img",
+        src: user_default,
+        alt: "profile"
+      }
+    )), /* @__PURE__ */ import_react30.default.createElement("div", { className: "left-content" }, /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "h5" }, user.firstName, " ", user.lastName), /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2", sx: { mt: 1, mb: 1 } }, "@", user.username)))), /* @__PURE__ */ import_react30.default.createElement("div", { className: "right-profile-container" }, /* @__PURE__ */ import_react30.default.createElement(Paper_default, null, /* @__PURE__ */ import_react30.default.createElement("div", { className: "right-profile-content" }, /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "h5" }, "User Information"), /* @__PURE__ */ import_react30.default.createElement(
+      "div",
+      {
+        className: `profile-info ${edit && "edit-active"}`,
+        onClick: () => setEdit(!edit)
+      },
+      /* @__PURE__ */ import_react30.default.createElement(FiEdit, null),
+      /* @__PURE__ */ import_react30.default.createElement(
+        Typography_default,
+        {
+          sx: {
+            cursor: "pointer",
+            "&:hover": { textDecoration: "underline" }
+          },
+          variant: "body2"
+        },
+        "Edit"
+      )
+    )), /* @__PURE__ */ import_react30.default.createElement(Divider_default, null), /* @__PURE__ */ import_react30.default.createElement(
+      Formik,
+      {
+        initialValues: initVal,
+        validationSchema: updateSchema,
+        onSubmit: update
+      },
+      /* @__PURE__ */ import_react30.default.createElement(Form2, { className: "form-profile-container" }, /* @__PURE__ */ import_react30.default.createElement("div", { className: "input-group-container" }, /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2" }, "First Name"), /* @__PURE__ */ import_react30.default.createElement(
+        Field,
+        {
+          className: `login-input  ${edit && "border-active"}`,
+          name: "firstName",
+          type: "text",
+          disabled: edit ? `` : true
+        }
+      ), /* @__PURE__ */ import_react30.default.createElement(ErrorMessage, { name: "firstName" }, (msg) => /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2" }, "Last Name"), /* @__PURE__ */ import_react30.default.createElement(
+        Field,
+        {
+          className: `login-input  ${edit && "border-active"}`,
+          name: "lastName",
+          type: "text",
+          disabled: edit ? `` : true
+        }
+      ), /* @__PURE__ */ import_react30.default.createElement(ErrorMessage, { name: "lastName" }, (msg) => /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg)))), /* @__PURE__ */ import_react30.default.createElement("div", { className: "input-group-container" }, /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2" }, "Password"), /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "password-container" }, /* @__PURE__ */ import_react30.default.createElement(
+        Field,
+        {
+          className: `login-input  ${edit && "border-active"}`,
+          name: "password",
+          type: "password",
+          disabled: edit ? `` : true
+        }
+      )), /* @__PURE__ */ import_react30.default.createElement(ErrorMessage, { name: "password" }, (msg) => /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg))), /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "form-group" }, /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2" }, "Confirm Password"), /* @__PURE__ */ import_react30.default.createElement(Box_default, { className: "password-container" }, /* @__PURE__ */ import_react30.default.createElement(
+        Field,
+        {
+          className: `login-input  ${edit && "border-active"}`,
+          name: "confirmPassword",
+          type: "password",
+          disabled: edit ? `` : true
+        }
+      )), /* @__PURE__ */ import_react30.default.createElement(ErrorMessage, { name: "confirmPassword" }, (msg) => /* @__PURE__ */ import_react30.default.createElement(Typography_default, { variant: "body2", sx: { color: "red" } }, msg)))), /* @__PURE__ */ import_react30.default.createElement("button", { type: "submit", className: "register-btn" }, "Update"))
+    ))))), /* @__PURE__ */ import_react30.default.createElement(Footer_default, null));
+  };
+  var Profile_default = Profile;
+
+  // src/pages/Show.js
+  var import_react31 = __toESM(require_react(), 1);
+  var import_react32 = __toESM(require_react(), 1);
+  var Show = () => {
+    const [show, setShow] = (0, import_react31.useState)([]);
+    const [isAdd, setIsAdd] = (0, import_react31.useState)(false);
+    const { type, id } = useParams();
+    const {
+      name,
+      first_air_date,
+      title,
+      overview,
+      vote_average,
+      poster_path,
+      release_date,
+      runtime,
+      vote_count,
+      backdrop_path,
+      production_countries = [],
+      genres = [],
+      production_companies = []
+    } = show;
+    const { setIsUserLoggedIn } = (0, import_react32.useContext)(UserContext);
+    const navigate2 = useNavigate();
+    let token2 = getToken();
+    let user = getCurrentUser();
+    const handleError = () => {
+      destroySession();
+      setIsUserLoggedIn(false);
+      navigate2("/login");
+    };
+    (0, import_react31.useEffect)(() => {
+      if (token2 && user) {
+        getShowByShowId(id, token2).then((res) => {
+          if (res.data != "") {
+            setIsAdd(true);
+          } else {
+            setIsAdd(false);
+          }
+        }).catch((err) => handleError());
+        getShowById(type, id).then((res) => setShow(res.data)).catch((err) => handleError());
+      } else {
+        handleError();
+      }
+    }, [id]);
+    const getStrValue = (array2, propName) => {
+      let strVal = "";
+      for (let i = 0; i < array2.length; i++) {
+        strVal += array2[i][propName];
+        if (i !== array2.length - 1) {
+          strVal += ", ";
+        }
+      }
+      if (strVal.endsWith(",")) {
+        strVal = strVal.slice(0, -1);
+      }
+      return strVal;
+    };
+    const countrieStr = getStrValue(production_countries, "name");
+    const genresStr = getStrValue(genres, "name");
+    const companiesStr = getStrValue(production_companies, "name");
+    const handleAddToList = () => {
+      if (token2 && user) {
+        let payload = {
+          userId: user.id,
+          showId: id,
+          poster: poster_path,
+          title: title || name,
+          type
+        };
+        addUserList(user.id, payload, token2).then((res) => console.log("Show added to list")).catch((err) => handleError());
+      } else {
+        handleError();
+      }
+    };
+    const handleRemoveFromList = () => {
+      if (token2 && user) {
+        removeUserList(id, token2).then((res) => console.log("Removed from list")).catch((err) => handleError());
+      } else {
+        handleError();
+      }
+    };
+    return /* @__PURE__ */ import_react31.default.createElement(import_react31.default.Fragment, null, /* @__PURE__ */ import_react31.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react31.default.createElement("div", { className: "show-container" }, /* @__PURE__ */ import_react31.default.createElement(
+      "div",
+      {
+        className: "bg-img",
+        style: {
+          backgroundImage: `url(${POSTER_IMG}${backdrop_path})`
+        }
+      }
+    ), /* @__PURE__ */ import_react31.default.createElement(Container_default, null, /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "show-content-container" }, /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "left-show-container" }, /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "show-img" }, /* @__PURE__ */ import_react31.default.createElement("img", { src: `${POSTER_IMG}${poster_path}`, alt: title })), /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "votes" }, /* @__PURE__ */ import_react31.default.createElement(Typography_default, { variant: "body2" }, vote_average, " / ", vote_count, " voted"))), /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "right-show-container" }, /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "btn-container" }, isAdd ? /* @__PURE__ */ import_react31.default.createElement("button", { className: "add-btn", onClick: handleRemoveFromList }, /* @__PURE__ */ import_react31.default.createElement(FiTrash2, null), "Remove from List") : /* @__PURE__ */ import_react31.default.createElement("button", { className: "add-btn", onClick: handleAddToList }, /* @__PURE__ */ import_react31.default.createElement(FiPlus, null), "Add to List")), /* @__PURE__ */ import_react31.default.createElement(Typography_default, { variant: "h4", sx: { mb: 3 } }, title || name), /* @__PURE__ */ import_react31.default.createElement(Typography_default, { paragraph: true, sx: { mb: 3 } }, overview), /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "details" }, /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "left-details" }, /* @__PURE__ */ import_react31.default.createElement(Typography_default, { paragraph: true, sx: { mb: 1 } }, /* @__PURE__ */ import_react31.default.createElement("strong", null, "Released Date: "), release_date || first_air_date), /* @__PURE__ */ import_react31.default.createElement(Typography_default, { paragraph: true, sx: { mb: 1 } }, /* @__PURE__ */ import_react31.default.createElement("strong", null, "Genre: "), genresStr), /* @__PURE__ */ import_react31.default.createElement(Typography_default, { paragraph: true, sx: { mb: 1 } }, /* @__PURE__ */ import_react31.default.createElement("strong", null, "Production: "), companiesStr)), /* @__PURE__ */ import_react31.default.createElement(Box_default, { className: "right-details" }, /* @__PURE__ */ import_react31.default.createElement(Typography_default, { paragraph: true, sx: { mb: 1 } }, /* @__PURE__ */ import_react31.default.createElement("strong", null, "Duration: "), runtime || 30, " min"), /* @__PURE__ */ import_react31.default.createElement(Typography_default, { paragraph: true, sx: { mb: 1 } }, /* @__PURE__ */ import_react31.default.createElement("strong", null, "Country: "), countrieStr))))))), /* @__PURE__ */ import_react31.default.createElement(Footer_default, null));
+  };
+  var Show_default = Show;
+
+  // src/pages/Contact.js
+  var import_react33 = __toESM(require_react(), 1);
+  var Contact = () => {
+    return /* @__PURE__ */ import_react33.default.createElement(import_react33.default.Fragment, null, /* @__PURE__ */ import_react33.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react33.default.createElement("div", { className: "container footer-link-container" }, /* @__PURE__ */ import_react33.default.createElement("div", { className: "footer-link-content" }, /* @__PURE__ */ import_react33.default.createElement(
+      Typography_default,
+      {
+        variant: "h4",
+        sx: { mb: "1.5rem", fontWeight: "bold", mt: "-12rem" }
+      },
+      "Contact Us"
+    ), /* @__PURE__ */ import_react33.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "Thank you for your interest in Seven Shows. If you have any questions, comments, or feedback about our website or services, please do not hesitate to contact us."), /* @__PURE__ */ import_react33.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "Email: support@sevenshows.com"), /* @__PURE__ */ import_react33.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "We strive to respond to all inquiries within 24-48 hours. Please note that our support team is available Monday-Friday, 9am-5pm PST."), /* @__PURE__ */ import_react33.default.createElement(Typography_default, { paragraph: true }, "Thank you for using Seven Shows!"))), /* @__PURE__ */ import_react33.default.createElement(Footer_default, null));
+  };
+  var Contact_default = Contact;
+
+  // src/pages/PrivacyPolicy.js
+  var import_react34 = __toESM(require_react(), 1);
+  var PrivacyPolicy = () => {
+    return /* @__PURE__ */ import_react34.default.createElement(import_react34.default.Fragment, null, /* @__PURE__ */ import_react34.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react34.default.createElement("div", { className: "container footer-link-container" }, /* @__PURE__ */ import_react34.default.createElement("div", { className: "footer-link-content" }, /* @__PURE__ */ import_react34.default.createElement(Typography_default, { variant: "h4", sx: { mb: "1.5rem", fontWeight: "bold" } }, "Privacy Policy"), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "At Seven Shows, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and disclose personal information about you when you use our website. By using Seven Shows, you consent to the terms of this Privacy Policy."), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "1. Information We Collect"), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "When you create an account on Seven Shows, we collect personal information such as your name, email address, and password. We may also collect information about your use of the website, such as the movies and TV shows you have added to your list."), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "2. How We Use Your Information"), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "We use your personal information to provide and improve our website and services, to personalize your experience on our website, and to communicate with you about your account and other relevant information. We may also use your information to analyze and improve the effectiveness of our website and services."), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, /* @__PURE__ */ import_react34.default.createElement("strong", null, "3. Disclosure of Your Information")), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true }, "We do not share your personal information with third parties except in the following limited circumstances:"), /* @__PURE__ */ import_react34.default.createElement("ul", { style: { marginBottom: "1.5rem", marginLeft: "2rem" } }, /* @__PURE__ */ import_react34.default.createElement("li", null, "With your consent or at your direction;"), /* @__PURE__ */ import_react34.default.createElement("li", null, "To comply with applicable law, regulation, legal process, or governmental request;"), /* @__PURE__ */ import_react34.default.createElement("li", null, "To enforce our Terms of Service;"), /* @__PURE__ */ import_react34.default.createElement("li", null, "To protect our rights or property, or the safety or security of ourselves or others; or"), /* @__PURE__ */ import_react34.default.createElement("li", null, "In connection with a merger, acquisition, or sale of all or a portion of our assets.")), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "4. Data Security"), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "We take reasonable measures to protect your personal information from loss, misuse, unauthorized access, disclosure, alteration, and destruction. However, no security system is completely secure, and we cannot guarantee the absolute security of your information."), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "5. Data Retention"), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "We take reasonable measures to protect your personal information from loss, misuse, unauthorized access, disclosure, alteration, and destruction. However, no security system is completely secure, and we cannot guarantee the absolute security of your information."), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "6. Your Rights"), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "You may have certain rights regarding your personal information, including the right to access, correct, or delete your personal information. If you would like to exercise any of these rights, please contact us."), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "7. Changes to this Privacy Policy"), /* @__PURE__ */ import_react34.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "Seven Shows reserves the right to modify or revise this Privacy Policy at any time, and any such modifications or revisions shall be effective immediately upon posting. Your continued use of our website after any such changes will constitute your acceptance of the revised Privacy Policy."))), /* @__PURE__ */ import_react34.default.createElement(Footer_default, null));
+  };
+  var PrivacyPolicy_default = PrivacyPolicy;
+
+  // src/pages/Terms.js
+  var import_react35 = __toESM(require_react(), 1);
+  var Terms = () => {
+    return /* @__PURE__ */ import_react35.default.createElement(import_react35.default.Fragment, null, /* @__PURE__ */ import_react35.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react35.default.createElement("div", { className: "container footer-link-container" }, /* @__PURE__ */ import_react35.default.createElement("div", { className: "footer-link-content" }, /* @__PURE__ */ import_react35.default.createElement(Typography_default, { variant: "h4", sx: { mb: "1.5rem", fontWeight: "bold" } }, "Terms and Conditions"), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "Welcome to Seven Shows, a website where you can create a personal list of movies and TV series and view information about them. By using this website, you agree to the following terms and conditions:"), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "1. Acceptance of Terms"), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "By using Seven Shows, you agree to be bound by these Terms of Service. If you do not agree to these Terms of Service, you may not use the website. These Terms of Service may be revised or updated from time to time, and it is your responsibility to check for changes."), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "2. User Conduct"), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "You agree to use Seven Shows only for lawful purposes and in accordance with these Terms of Service. You must not use the website in any way that causes, or may cause, damage to the website or impair its availability or accessibility. You must not use the website to copy, store, host, transmit, send, use, publish, or distribute any material that consists of (or is linked to) spyware, computer viruses, or any other malicious code."), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, /* @__PURE__ */ import_react35.default.createElement("strong", null, "3. Content")), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "You may view information about movies and TV series on Seven Shows. The website does not allow for the sharing of information with other users or the uploading of any content by users."), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "4. User Accounts"), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "To use Seven Shows, you must create a user account. You agree to provide accurate and complete information when creating your account, and to keep your account information up-to-date. You are solely responsible for the activity that occurs on your account, and you must keep your login credentials secure."), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "5. Limitation of Liability"), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "Seven Shows shall not be liable to you or any third party for any damages, including but not limited to direct, indirect, incidental, special, punitive, or consequential damages, arising out of or in connection with your use of Seven Shows. This limitation of liability applies regardless of the cause of action or legal theory, whether in contract, tort, negligence, or otherwise."), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { fontWeight: "bold" } }, "6. Changes to Terms of Service"), /* @__PURE__ */ import_react35.default.createElement(Typography_default, { paragraph: true, sx: { mb: "1.5rem" } }, "Seven Shows reserves the right to modify or revise these Terms of Service at any time, and your continued use of the website after any such modifications or revisions shall be deemed acceptance of these changes."))), /* @__PURE__ */ import_react35.default.createElement(Footer_default, null));
+  };
+  var Terms_default = Terms;
+
   // src/App.js
   var App = () => {
-    const { isUserLoggedIn, setIsUserLoggedIn, userData, setUserData } = (0, import_react31.useContext)(UserContext);
+    const { isUserLoggedIn, setIsUserLoggedIn } = (0, import_react36.useContext)(UserContext);
     let user = localStorage.getItem("user");
-    const navigate = useNavigate();
-    (0, import_react31.useEffect)(() => {
+    const navigate2 = useNavigate();
+    (0, import_react36.useEffect)(() => {
       if (user) {
         setIsUserLoggedIn(true);
-        setUserData(JSON.parse(user));
+        navigate2("/home");
       } else {
         setIsUserLoggedIn(false);
-        navigate("/login");
+        destroySession();
+        navigate2("/login");
       }
     }, [user]);
-    return /* @__PURE__ */ import_react31.default.createElement(import_react31.default.Fragment, null, /* @__PURE__ */ import_react31.default.createElement(ThemeProvider4, { theme: theme_default }, /* @__PURE__ */ import_react31.default.createElement(APIContextProvider, null, /* @__PURE__ */ import_react31.default.createElement(UserListProvider, null, /* @__PURE__ */ import_react31.default.createElement(AppbarContextProvider, null, isUserLoggedIn ? /* @__PURE__ */ import_react31.default.createElement(import_react31.default.Fragment, null, /* @__PURE__ */ import_react31.default.createElement(Appbar_default, null), /* @__PURE__ */ import_react31.default.createElement(Routes, null, /* @__PURE__ */ import_react31.default.createElement(Route, { path: "/home", element: /* @__PURE__ */ import_react31.default.createElement(Home_default, null) }), /* @__PURE__ */ import_react31.default.createElement(Route, { path: "/movies", element: /* @__PURE__ */ import_react31.default.createElement(Movies_default, null) }), /* @__PURE__ */ import_react31.default.createElement(Route, { path: "/series", element: /* @__PURE__ */ import_react31.default.createElement(Series_default, null) }), /* @__PURE__ */ import_react31.default.createElement(Route, { path: "/list", element: /* @__PURE__ */ import_react31.default.createElement(MyList_default, null) }), /* @__PURE__ */ import_react31.default.createElement(Route, { path: "/search", element: /* @__PURE__ */ import_react31.default.createElement(SearchResults_default, null) }))) : /* @__PURE__ */ import_react31.default.createElement(Routes, null, /* @__PURE__ */ import_react31.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react31.default.createElement(Landing_default, null) }), /* @__PURE__ */ import_react31.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react31.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react31.default.createElement(Route, { path: "/signup", element: /* @__PURE__ */ import_react31.default.createElement(SignUpForm_default, null) })), /* @__PURE__ */ import_react31.default.createElement(Footer_default, null))))));
+    return /* @__PURE__ */ import_react36.default.createElement(import_react36.default.Fragment, null, /* @__PURE__ */ import_react36.default.createElement(ThemeProvider4, { theme: theme_default }, /* @__PURE__ */ import_react36.default.createElement(AppbarContextProvider, null, /* @__PURE__ */ import_react36.default.createElement(SearchContextProvider, null, isUserLoggedIn ? /* @__PURE__ */ import_react36.default.createElement(import_react36.default.Fragment, null, /* @__PURE__ */ import_react36.default.createElement(Routes, null, /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/home", element: /* @__PURE__ */ import_react36.default.createElement(Home_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/movies", element: /* @__PURE__ */ import_react36.default.createElement(Movies_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/series", element: /* @__PURE__ */ import_react36.default.createElement(Series_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/list", element: /* @__PURE__ */ import_react36.default.createElement(MyList_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/search", element: /* @__PURE__ */ import_react36.default.createElement(SearchResults_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/:type/:id", element: /* @__PURE__ */ import_react36.default.createElement(Show_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/profile", element: /* @__PURE__ */ import_react36.default.createElement(Profile_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/contact", element: /* @__PURE__ */ import_react36.default.createElement(Contact_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/privacy-policy", element: /* @__PURE__ */ import_react36.default.createElement(PrivacyPolicy_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/terms", element: /* @__PURE__ */ import_react36.default.createElement(Terms_default, null) }))) : /* @__PURE__ */ import_react36.default.createElement(Routes, null, /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react36.default.createElement(Landing_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/login", element: /* @__PURE__ */ import_react36.default.createElement(LoginForm_default, null) }), /* @__PURE__ */ import_react36.default.createElement(Route, { path: "/signup", element: /* @__PURE__ */ import_react36.default.createElement(SignUpForm_default, null) }))))));
   };
   var App_default = App;
 
   // src/index.js
   var root2 = import_client.default.createRoot(document.getElementById("root"));
   root2.render(
-    /* @__PURE__ */ import_react32.default.createElement(HashRouter, null, /* @__PURE__ */ import_react32.default.createElement(UserContextProvider, null, /* @__PURE__ */ import_react32.default.createElement(App_default, null)))
+    /* @__PURE__ */ import_react37.default.createElement(HashRouter, null, /* @__PURE__ */ import_react37.default.createElement(UserContextProvider, null, /* @__PURE__ */ import_react37.default.createElement(App_default, null)))
   );
 })();
 /*! Bundled license information:

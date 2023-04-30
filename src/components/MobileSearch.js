@@ -2,13 +2,13 @@ import { Box } from "@mui/material";
 import { SlMagnifier } from "react-icons/sl";
 import React, { useContext } from "react";
 import { AppbarContext } from "../context/AppbarContext";
-import { APIContext } from "../context/APIContext";
-import { getSearchResults } from "../services/APIService";
+import { getSearchResults } from "../services/ExternalAPIService";
 import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../context/SearchContext";
 
 const MobileSearch = () => {
   const { showMobileSearch, search, setSearch } = useContext(AppbarContext);
-  const { setSearchResults } = useContext(APIContext);
+  const { setSearchResults } = useContext(SearchContext);
   const navigate = useNavigate();
 
   const handleSearch = (e) => {
